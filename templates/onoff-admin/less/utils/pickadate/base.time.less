@@ -1,0 +1,98 @@
+
+/* ==========================================================================
+   $BASE-TIME-PICKER
+   ========================================================================== */
+
+@import "variables.less";
+
+
+/**
+ * The list of times.
+ */
+.picker__list {
+    list-style: none;
+    padding: 0.5em 0;
+    margin: 0;
+}
+
+
+/**
+ * The times on the clock.
+ */
+.picker__list-item {
+    border-bottom: 1px solid @border-grey-light;
+    border-top: 1px solid @border-grey-light;
+
+    font-size: 1.1em;
+
+    margin-bottom: -1px; // Prevent border from doubling up.
+    position: relative;
+    background: #fff;
+    padding: .75em 1.25em;
+
+    // For `large` screens, reduce the padding to show more in view.
+    @media ( min-height: @breakpoint-large ) {
+        padding: .5em 1em;
+    }
+}
+
+/* Hovered time */
+.picker__list-item {
+    cursor: pointer;
+    
+    &:hover
+    {
+        .picker-item-hovered;
+        z-index: 10;
+    }
+
+    &:active
+    {
+        .picker-item-active;
+    }
+}
+
+/* Highlighted and hovered/focused time */
+.picker__list-item--highlighted {
+    .picker-item-highlighted;
+    z-index: 10;
+}
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+    .picker-item-hovered;
+}
+
+/* Selected and hovered/focused time */
+.picker__list-item--selected,
+.picker__list-item--selected:hover,
+.picker--focused .picker__list-item--selected {
+    .picker-item-selected;
+    z-index: 10;
+}
+
+/* Disabled time */
+.picker__list-item--disabled,
+.picker__list-item--disabled:hover,
+.picker--focused .picker__list-item--disabled {
+    .picker-item-disabled;
+    z-index: auto;
+}
+
+
+
+
+/**
+ * The clear button
+ */
+.picker--time {
+
+    .picker__button--clear
+    {
+        .button;
+
+        color: @color_warning_iii;
+    }
+}
+
+
+

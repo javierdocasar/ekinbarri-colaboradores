@@ -1,0 +1,61 @@
+
+/* ==========================================================================
+   $BASE-PICKER
+   ========================================================================== */
+
+@import "variables.less";
+
+
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+.picker {
+
+    // The base font stylings.
+    font-size: @base-font-size;
+    text-align: left;
+    line-height: @base-line-height;
+    color: @negro;
+
+    // The picker shouldn’t affect or be affected by elements around it.
+    position: absolute;
+    z-index: @picker-z-index;
+
+    // The picker shouldn’t be selectable.
+    user-select: none;
+}
+
+
+/**
+ * The picker input element.
+ */
+.picker__input {
+    cursor: default;
+}
+
+
+/**
+ * When the picker is opened, the input element is “activated”.
+ */
+.picker__input.picker__input--active {
+    border-color: @input-active-border;
+    
+    border-radius: 0;
+    //border-color: transparent;
+    //outline: @input_line_color_a solid @linea_2;
+}
+
+
+/**
+ * The holder is the only “scrollable” top-level container element.
+ */
+.picker__holder {
+    margin-top: -@linea_1;
+
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+

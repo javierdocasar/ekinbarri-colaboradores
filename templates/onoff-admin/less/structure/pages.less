@@ -1,0 +1,118 @@
+article {
+	background-color: #fff;
+	.header,
+	.content {
+		padding: @panel_pad_v @panel_pad_h;
+	}
+}
+.article.login,
+.article.remind,
+.article.reset {
+	position: relative;
+	z-index: 2;
+	.content {
+		padding-top: 0;
+		padding-bottom: 2rem;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+	form {
+		margin: 0 auto;
+		max-width: 24rem;
+		position: relative;
+		z-index: 1;
+		fieldset {
+			border: none;
+		}
+		input {
+			font-size:1.6rem;
+		}
+		button.submit {
+			background-color: @color_link_i;
+			color: #fff;
+			border: 0 none;
+			.font_bold;
+			position: relative;
+			&:hover {
+				background-color: @color_link_ii;
+			}
+			&:active {
+				background-color: @color_link_iiii;
+			}
+		}
+	}
+}
+	.article.login {
+		.remind-links {
+			font-size: .9em;
+			text-align: center;
+			margin-top: 2em;
+			display: block;
+			a {
+				color: @txt_color_no_user;
+				padding: .5em;
+				opacity: .8;
+				display: block;
+				&:hover,
+				&:active {
+					opacity: 1;
+				}
+				@media (min-width: @media_s) {
+					padding-top: .3em;
+					padding-bottom: .3em;
+					display: inline-block;
+				}
+			}
+		}
+	}
+.article.profile {
+	.content {
+		margin: 0;
+	}
+}
+
+// Image BG Intro
+	/*.article.login,
+	.article.remind,
+	.article.reset {
+		&:before,
+		&:after {
+			background-size: cover;
+			background-position: center;
+			content: '';
+			left: 0;
+			top: 0;
+			position: fixed;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			display: block;
+			opacity: 0;
+			animation: anim-login 20s infinite;
+		}
+			&:before {
+				background-image: url(../images/login/1.jpg);
+				animation-delay: 5s;
+			}
+			&:after {
+				background-image: url(../images/login/2.jpg);
+			}
+	}
+		@keyframes anim-login {
+				0% {
+					opacity: 0;
+					transform: scale(1);
+			}
+			33%,
+			66% {
+					opacity: .33;
+			}
+			100% {
+					opacity: 0;
+					 transform: scale(1.16);
+				}
+		}*/

@@ -1,0 +1,67 @@
+.off {
+	position:relative;
+	pointer-events: none;
+	&:before {
+		background-color: @color_off;
+		content:'';
+		left:0; right:0; top:0; bottom:0;
+		position:absolute;
+		display:block;
+		z-index:999;
+	}
+}
+	section.detail.off,
+	section.relation.off {
+		border-bottom: @gris_iiii solid @linea_1;
+		position:relative;
+		.nav-form {
+			position: relative; // Evita superposiciones por el sticky al editar los select
+			ul {
+				border-color: @gris_ii !important;
+			}
+			a {
+				color: @gris_ii !important;
+			}
+			.active {
+				a {
+					color: @gris_i !important;
+					border-color: @gris_ii !important;
+				}
+			}
+		}
+		& > .content > form > nav button {
+			&:not(.b-select)  { // Los b-select tiene el color del texto del botón en transparent
+				color: @gris_i !important;
+			}
+		}
+		& > .content > form > nav .save {
+			button {
+				background-color: @gris_ii !important;
+				color: #fff !important;
+				border-color: @gris_ii !important;
+			}
+		}
+		/*& > .content > form > fieldset > .form-element:not(.invalid) {
+			& > label {
+				&.mandatory,
+				&:required {
+					&:after
+					{
+						color: @gris_i !important;
+					}
+				}
+			}
+		}*/
+		& > .content > form > fieldset > .form-element,
+		& > .content > form > fieldset > .nav-actions,
+		//& > .content > form > fieldset > .monitor,
+		& > .content > form > fieldset > .rtable {
+			display: none;
+		}
+		/*button[class^="b-"],
+		button[class*=" b-"] {
+			&:before {
+				color: @gris_i !important;
+			}
+		}*/
+	}

@@ -1,0 +1,13 @@
+.tox-tinymce {
+	min-height: 80vh;
+	// States
+		&.tox-fullscreen {
+			border-top: @linea_1 solid @blocks_line_color;
+			width: 100vw;
+			height: calc(100vh - 6.2rem) !important;
+			top: 4rem !important;
+			@media (min-width: @media_l) {
+				width: calc(100vw - @sitemap_w) !important;
+			}
+		}
+}

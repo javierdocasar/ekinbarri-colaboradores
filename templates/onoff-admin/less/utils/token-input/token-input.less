@@ -1,0 +1,174 @@
+ul.token-input-list {
+    background-color: #fff;
+    border: @input_line_color solid @linea_1;
+    border-radius: @border_radius_input;
+
+    cursor: text;
+    //font-size: 12px;
+    //font-family: Verdana;
+
+    list-style-type: none;
+
+    margin: 0;
+    padding: @form_data_pad_v @form_data_pad_h;
+    //clear: left;
+
+    height: auto !important;
+    width: 100%;
+
+    overflow: hidden; 
+    z-index: 999;
+
+    &:hover
+    {
+        border-color: @input_line_color_h;
+    }
+
+    li
+    {
+        list-style-type: none;
+        vertical-align: top;
+
+        margin: 0 .1em .1em;
+        padding: .3em .8em;
+        padding-right: 2em;
+
+        display: inline-block;
+
+        input
+        {
+            background-color: white;
+            border: 0 none;
+
+            width: 350px;
+
+            padding: 0;
+
+            -webkit-appearance: caret;
+        }
+
+        &.token-input-input-token
+        {
+            padding: 0;
+        }
+    }
+}
+
+li.token-input-token {
+    background-color: @color_link_bg;
+    border-radius: @border_radius;
+
+    height: auto !important;
+
+    cursor: default;
+
+    display: inline-block;
+    overflow: hidden;
+
+    position: relative;
+
+    p {
+        float: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    a.button
+    {
+        background-color: @color_link_iii;
+        color: #fff;
+        border: none;
+
+        font-size: 1em;
+
+        margin: .1em 0 .1em .1em;
+
+        &:hover
+        {
+            background-color: mix(@color_link_iii, @color_link_ii, 20%);
+        }
+
+        &:active
+        {
+            background-color: @color_link_i;
+            color:@negro;
+        }
+
+        &[href^="tel:"]:before
+        {
+            // Iconos
+            .icon-wf;
+
+            content: '\e825'; // Teléfono
+
+            font-size: .9em;
+        }
+    }
+}
+
+li.token-input-selected-token {
+    background-color: @color_link_ii;
+    color: #fff;
+}
+
+.token-input-delete-token {
+    padding: .4rem  .6rem;
+
+    line-height: 1em;
+
+    cursor: pointer;
+
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+div.token-input-dropdown {
+    background-color: #fff;
+    border: @gris_iii solid @linea_1;
+
+    font-size: .9em;
+
+    cursor: default;
+
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+
+    p {
+        margin: 0;
+        padding: @button_pad;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        background-color: #fff;
+
+        list-style-type: none;
+
+        margin: 0;
+        padding: @button_pad;
+
+        &.token-input-dropdown-item {
+            background-color: @gris_iiiii;
+        }
+
+        &.token-input-dropdown-item2 {
+            background-color: #fff;
+        }
+
+        &.token-input-selected-dropdown-item {
+            background-color: @color_link_i;
+        }
+
+        em {
+            font-weight: bold;
+            font-style: normal;
+        }
+    }
+}
+

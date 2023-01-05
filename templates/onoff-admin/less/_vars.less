@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/*
+www.onoff.es
+*/
+
+@media_s: 768px;
+@media_n: 960px;
+@media_l: 1260px;
+
+// 	Color
+@color_ic: #2eaa7c;
+
+@color_link_i: @color_ic;
+@color_link_ii: mix(#000, @color_link_i, 10%);
+@color_link_iii: mix(#000, @color_link_i, 20%);
+@color_link_iiii: mix(#000, @color_link_i, 40%);
+
+@color_link_bg: fade(@color_link_i, 5%);
+
+@rojo: rgb(215, 59, 60);
+@verde: rgb(68, 156, 0);
+@naranja: rgb(255, 102, 0);
+@azul: rgb(4, 81, 123);
+@morado: rgb(154, 52, 186);
+
+@negro: #222;
+
+@gris_max: mix(@color_ic, #444, 16%);
+@gris_min: mix(@color_ic, #fafafa, 2%);
+	@gris_i: @gris_max;
+	@gris_ii: mix(@gris_min, @gris_max, 20%);
+	@gris_iii: mix(@gris_min, @gris_max, 40%);
+	@gris_iiii: mix(@gris_min, @gris_max, 60%);
+	@gris_iiiii: mix(@gris_min, @gris_max, 90%);
+	@gris_iiiiii: @gris_min;
+
+@color_highlight_i: #ffa;
+@color_highlight_ii:	mix(@color_highlight_i, #fff);
+
+@color_selection: @color_highlight_i;
+
+@color_status_proccess:	#f00;
+@color_status_ready:	#0f0;
+@color_status_end: #999;
+
+@color_ok_i: #0b0;
+@color_ok_ii: #080;
+@color_ok_iii: #040;
+
+@color_warning_i: #f00;
+@color_warning_ii: #a00;
+@color_warning_iii: #900;
+
+@color_invalid_i: #b00;
+@color_invalid_ii: #fbb;
+
+@color_disabled_i: #888;
+
+@color_off: fade(#f8f8f8, 60%);
+
+// Interactive
+	// Link
+		@txt_link_color: @color_link_iii;
+		@txt_link_color_h: @negro;
+		@txt_link_color_a: @color_link_iii;
+		@txt_link_color_d: @gris_iii;
+	// Button
+		@button_base_color: transparent;
+		@button_base_color_h:	@color_link_bg;
+		@button_base_color_a:	@color_link_i;
+		@button_base_color_c: #fff;
+		@button_base_color_d:	#fff;
+		@button_txt_color: @color_link_ii;
+		@button_txt_color_h: @color_link_ii;
+		@button_txt_color_a: #fff;
+		@button_txt_color_c: @color_link_ii;
+		@button_txt_color_d: @color_disabled_i;
+	// En botones .big
+		@button_border_color: @color_link_ii;
+		@button_border_color_h: @color_link_ii;
+		@button_border_color_a: @color_link_i;
+		@button_border_color_c: @negro;
+		@button_border_color_d: #fff;
+
+// HTML
+	@color_bg: #fff;
+	@txt_color: @negro;
+
+	@color_bg_no_user: mix(@color_ic, @gris_iiiiii, 16%);
+	@txt_color_no_user: mix(@color_ic, @negro, 50%);
+
+	@color_msg_bg: @color_highlight_i;
+	@color_msg_warning_bg: mix(#fff, @color_warning_i, 25%);
+	@color_msg_progress_bar:	@color_warning_i;
+
+	@search_bg_color: @color_link_ii;
+
+	@figure_bg_color: transparent;
+
+	@blocks_line_color: fade(@negro, 16%);
+	@separator_line_color: fade(@negro, 8%);
+
+// Forms
+	@input_line_color: @gris_iii;
+	@input_line_color_h:	@gris_i;
+	@input_line_color_a:	@negro;
+
+// 	Tablas
+	@indicador_color_positivo: @color_ok_i;
+	@indicador_color_negativo: @color_invalid_i;
+	@indicador_color_cancelado: @gris_iiii;
+
+// 	Tipo
+@txt_font_family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@txt_line_height: 1.4;
+
+// 	HTML
+@border_radius: .6rem;
+@border_radius_input: .16rem;
+
+@list_actions_w: 6rem;
+
+@form_element_pad_v:	.8rem;
+
+@label_w: 10rem;
+@label_size: .8rem;
+@label_pad_v: .4rem;
+
+@form_data_size: 1.2rem;
+@form_data_pad_v: .6rem;
+@form_data_pad_h: .8rem;
+
+@input_h: 2.75rem;
+
+@select_icon_size: 1rem;
+
+@linea_1: .0625em;//1px;
+@linea_2: .125em;//2px;
+
+@icon_loading_size: 20px;
+@icon_waiting_size: 16px;
+@icon_loading_border:	3px;
+
+// 	Forms
+@button_icon_pad: 2.6em;
+@button_pad_h: .8rem;
+@button_pad_v: .4rem;
+@button_pad: @button_pad_v @button_pad_h;
+@button_pad_big_h: 1rem;
+@button_pad_big_v: .7rem;
+@button_pad_big: @button_pad_big_v @button_pad_big_h;
+
+// 	Navigation
+@sitemap_b_pad_h: .8rem;
+@sitemap_b_pad_v: .5rem;
+@sitemap_b_pad_l: 3.2rem;
+@sitemap_b_icon_l: .8rem;
+@sitemap_b_icon_pad_v: .8rem;
+
+// 	Estructura
+@sitemap_w: 14rem;
+@right_w: 18rem;
+@footer_h: 5.3rem;
+@main_w: 94%;
+
+@txt_w_max: 44rem;
+
+@form_w_max: 36rem;
+
+@modal_margen: 2rem;
+
+@panel_pad_h: 1.5rem;
+@panel_pad_v: .75rem;
+
+@nav_desplegable_h: @panel_pad_h + (@button_pad_v * 2) + 2.2rem;
+
+@grid_item_w_min: 18rem;
+
+@column_gap: .5em;
+
+// 	Motion
+@v-screen: .3s;
+@v-menus: .2s;
+@v-loading: .3s;
+
+@v-screen-delay: .1s;
+
+@desplaza: 1rem;
+@curva-general: cubic-bezier(.5, 0, 0, 1);

@@ -1,0 +1,259 @@
+.tabulator {
+	background-color: #eee !important;
+	border-top: @linea_1 solid @separator_line_color !important;
+	font-size: 1em;
+	text-align: left;
+	margin: 0 0 3rem;
+	width: 100%;
+	min-height: 6em;
+	flex-basis: 100%;
+	position: relative;
+	// Alineado
+		.right {
+			text-align: right;
+		}
+	// Elementos
+		// Celdas
+			.actions {
+				vertical-align: top;
+				white-space: nowrap;
+				text-align: right;
+				.button{
+					display: inline-block;
+				}
+			}
+			// Color
+				.red {
+					background-color: fade(@rojo, 15%) !important;
+					color: mix(@negro, @rojo, 30%);
+					border-color: fade(@rojo, 40%);
+					&:empty {
+						background-color: @rojo;
+					}
+				}
+				.green {
+					background-color: fade(@verde, 15%) !important;
+					color: mix(@negro, @verde, 30%);
+					border-color: fade(@verde, 40%);
+					&:empty {
+						background-color: @verde;
+					}
+				}
+				.orange {
+					background-color: fade(@naranja, 15%) !important;
+					color: mix(@negro, @naranja, 30%);
+					border-color: fade(@naranja, 40%);
+					&:empty {
+						background-color: @naranja;
+					}
+				}
+				.blue {
+					background-color: fade(@azul, 15%) !important;
+					color: mix(@negro, @azul, 30%);
+					border-color: fade(@azul, 40%);
+					&:empty {
+						background-color: @azul;
+					}
+				}
+				.purple {
+					background-color: fade(@morado, 15%) !important;
+					color: mix(@negro, @morado, 30%);
+					border-color: fade(@morado, 40%);
+					&:empty {
+						background-color: @morado;
+					}
+				}
+		// Filas
+			// Color
+				/* [class*='row-color-'] {
+					border-style: solid;
+					border-width: @linea_1 0 0 .75rem;
+				}
+					.row-color-a {
+						border-left-color: @rojo;
+					}
+					.row-color-b {
+						border-left-color: @verde;
+					}
+					.row-color-c {
+						border-left-color: @naranja;
+					}
+					.row-color-d {
+						border-left-color: @azul;
+					}
+					.row-color-e {
+						border-left-color: @morado;
+					} */
+				.tabulator-row {
+					&.tabulator-selectable {
+						&:hover {
+							background-color: @color_selection !important;
+						}
+					}
+					&.tabulator-group {
+						background-color: #fff;
+						@media (min-width: @media_l) {
+							padding-left: .2rem;
+						}
+						.tabulator-group-toggle {
+							display: none;
+						}
+					}
+				}
+		// Indicadores
+			span {
+				&:not(.tabulator-col-resize-handle):not([class*='level-']) {
+					border-color: @gris_iii;
+					border-width: @linea_1;
+					border-style: solid;
+					border-radius: @border_radius;
+					font-size: .9em;
+					text-align: center;
+					white-space: nowrap;
+					padding: .2rem .6rem;
+					display: inline-block;
+					pointer-events: none;
+				}
+			}
+			.indicator {
+				border: 0 none !important;
+				font-size: .9em;
+				text-align: center;
+				white-space: nowrap;
+				padding: .2rem .6rem;
+				display: block;
+				pointer-events: none;
+				&:empty {
+					border-radius: 50% !important;
+					vertical-align: middle;
+					width: 1.8em;
+					height: 1.8em;
+					display: inline-block;
+				}
+			}
+			// State
+				.proccess {
+					background-color: fade(@color_status_proccess, 50%);
+					color: mix(@negro, @color_status_proccess, 50%);
+				}
+				.ready {
+					background-color: fade(@color_status_ready, 50%);
+					color: mix(@negro, @color_status_ready, 50%);
+				}
+				.end {
+					background-color: fade(@color_status_end, 50%);
+					color: mix(@negro, @color_status_end, 50%);
+				}
+				.si,
+				.positive {
+					color: mix(@negro, @indicador_color_positivo, 50%);
+					background-color: fade(@indicador_color_positivo, 50%);
+				}
+				.no,
+				.negative {
+					color: mix(@negro, @indicador_color_negativo, 50%);
+					background-color: fade(@indicador_color_negativo, 50%);
+				}
+				.off,
+				.cancel {
+					background-color: mix(#fff, @indicador_color_cancelado, 50%);
+					color: mix(@negro, @indicador_color_cancelado);
+				}
+		// Checbox
+			input[type='checkbox'] {
+				background-color: @gris_iiiiii;
+				border-color: @gris_iiii;
+				border-style: solid;
+				border-width: @linea_2;
+				border-radius: 50%;
+				padding: 0;
+				width: 1.3em;
+				height: 1.3em;
+				appearance: none;
+				// State
+					&:hover {
+						border-color: @negro !important;
+					}
+					&:checked {
+						background-color: @indicador_color_positivo;
+						border-color: mix(@negro, @indicador_color_positivo, 30%);
+						border-width: @linea_2 * 2;
+					}
+			}
+	// Levels
+		/*@icon_level_w: 1em;
+		@icon_level_h: 1.4em;
+		@icon_level_line_w: .16em;
+		[class*='level-'] {
+			margin-right: .8em;
+			width: @icon_level_w;
+			height: @icon_level_h;
+			display: inline-block;
+			position: relative;
+			&:before,
+			&:after {
+				border-color: @gris_ii;
+				border-style: solid;
+				border-width: 0 0 @icon_level_line_w @icon_level_line_w;
+				content: '';
+				margin: auto;
+				right: 0;
+				top: 0;
+				position: absolute;
+			}
+				&:before {
+					width: @icon_level_w * .75;
+					height: @icon_level_h * .5;
+				}
+				&:after {
+					width: @icon_level_w * .45;
+					height: @icon_level_w * .45;
+					top: @icon_level_h * .3;
+					transform: rotate(225deg);
+				}
+		}
+			.level-1 {
+				&:before {
+					background-color: #fff;
+					border-width: @icon_level_line_w;
+					margin: 0;
+					width: @icon_level_w;
+					height: @icon_level_h;
+				}
+				&:after {
+					content: none;
+				}
+			}
+			.level-2 {}
+			.level-3 {
+				margin-left: 1em;
+			}
+			.level-4 {
+				margin-left: 2em;
+			}
+			.level-5 {
+				margin-left: 3em;
+			}*/
+	// Margen
+		/* .tabulator-col-content {
+			> .tabulator-col {
+				&:first-child {
+					padding-left: @panel_pad_h - .2rem;
+				}
+				&:last-of-type {
+					padding-right: @panel_pad_h - .2rem;
+				}
+			}
+			> .tabulator-cell {
+				&:first-child {
+					padding-left: @panel_pad_h;
+				}
+				&:last-of-type {
+					padding-right: @panel_pad_h;
+				}
+			}
+		} */
+		@media (min-width: @media_l) {
+			border-left: #fff solid @panel_pad_h * .5 !important;
+		}
+}

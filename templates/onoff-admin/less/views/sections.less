@@ -1,0 +1,73 @@
+html:not(.view-list):not(.view-detail):not(.view-relation):not(.view-direct):not(.view-subrelation) {
+	section.detail,
+	section.select,
+	section.relation,
+	section.subrelation,
+	section.direct {
+		.hidden; //.anima-slide-bt; //.anima-pop;
+	}
+}
+html.view-list {
+	section.detail,
+	section.select,
+	section.relation,
+	section.subrelation,
+	section.direct {
+		.hidden; //.anima-slide-bt; //.anima-pop;
+	}
+}
+html.view-detail,
+html.view-direct {
+	//#user-select,
+	//#calendar,
+	section.list:not(.visible) {
+		.hidden; //.visuallyhidden;
+	}
+	section.select:not(.visible) {
+		.hidden; //.anima-slide-bt; //.anima-pop;
+	}
+	section.relation,
+	section.subrelation {
+		.hidden; //.anima-slide-bt; //.anima-pop;
+	}
+}
+	html.view-detail {
+		section.detail.off {
+			// Asegura que no se vera el fondo blanco
+			min-height: 100vh;
+		}
+		section.direct {
+			.hidden; //.anima-slide-bt; //.anima-pop;
+		}
+	}
+	html.view-direct {
+		section.detail {
+			.hidden; //.anima-slide-bt; //.anima-pop;
+		}
+	}
+html.view-relation {
+	//#user-select,
+	//#calendar,
+	section.list:not(.visible),
+	section.detail fieldset,
+	section.direct {
+		.hidden; //.visuallyhidden;
+	}
+	section.subrelation {
+		.hidden; //.anima-slide-bt; //.anima-pop;
+	}
+	section.relation.off {
+		// Asegura que no se vera el fondo blanco
+		min-height: 100vh;
+	}
+}
+html.view-subrelation {
+	//#user-select,
+	//#calendar,
+	section.list:not(.visible),
+	section.detail fieldset,
+	section.relation fieldset,
+	section.direct {
+		.hidden; //.visuallyhidden;
+	}
+}

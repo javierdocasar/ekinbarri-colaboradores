@@ -1,0 +1,29 @@
+.guest-only {
+	body.user & {
+		.hidden;
+	}
+}
+body.no-user {
+	background-color: @color_bg_no_user;
+	color: @txt_color_no_user;
+	#header {
+		background-color: transparent;
+		height: auto;
+	}
+	#main {
+		background-color: transparent;
+	}
+	#footer {
+		padding-bottom: 1em;
+	}
+	#system-message-container {
+		overflow: hidden;
+	}
+	#component article {
+		background-color: transparent;
+		padding-top: 0;
+	}
+	&.login article.login {
+		animation: @v-screen a-content-open @curva-general forwards;
+	}
+}

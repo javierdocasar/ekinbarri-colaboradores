@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*
+www.onoff.es
+2013
+*/
+
+@import "_vars.less";
+@import "base/mixings.less";
+@import "base/typo.less";
+
+
+* { margin:0; padding:0; }
+
+html { height:100%; }
+
+body {
+
+	background:@color_link_ii;
+
+	font-weight:normal;
+	font-size:1em;
+	text-align:center;
+
+	* {
+		color:#fff;
+
+		line-height:1.4em;
+		margin-bottom:.6em;
+	}
+}
+
+article {
+
+	padding:0;
+	width:100%;
+
+	left:0;
+	top:0;
+	
+	h1 { font-size:12em; margin:.5em 0 0; padding:0; }
+	h2 { font-size:2em; margin:-.6em 0 2em; }
+
+	a.home {
+
+		background-color:#fff;
+		color:#000;
+
+		text-decoration:none;
+		font-size:1.2em;
+
+		padding:.6em 1em;
+
+		&:hover {
+
+			background-color:#000;
+			color:#fff;
+		}
+	}
+}
+
+
+

@@ -1,0 +1,237 @@
+@font-face {
+  font-family: 'icons';
+  src: url('../fonts/icons.eot?79906205');
+  src: url('../fonts/icons.eot?79906205#iefix') format('embedded-opentype'),
+  	   url('../fonts/icons.woff2?28826280') format('woff2'),
+       url('../fonts/icons.woff?79906205') format('woff'),
+       url('../fonts/icons.ttf?79906205') format('truetype'),
+       url('../fonts/icons.svg?79906205#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*@font-face {
+    font-family: 'open_sans_light';
+    src: url('../fonts/OpenSans-Light-webfont.eot');
+    src: url('../fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sans_regular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sans_bold';
+    src: url('../fonts/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+.font_light() {
+	//font-family: "open_sans_light",sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
+
+.font_regular() {
+	//font-family: "open_sans_regular",sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.font_bold() {
+	//font-family: "open_sans_bold",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+
+/*@font-face {
+    font-family: 'raleway_light';
+    src: url('../fonts/raleway-light-webfont.eot');
+    src: url('../fonts/raleway-light-webfont.eot?iefix') format('embedded-opentype'),
+         url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff'),
+         url('../fonts/raleway-light-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-light-webfont.svg#ralewaylight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway_medium';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?iefix') format('embedded-opentype'),
+         url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-medium-webfont.woff') format('woff'),
+         url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+         url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+.font_headers_light() {
+	/*font-family: 'raleway_light';
+	font-weight: normal;
+    font-style: normal;*/
+
+    .font_light;
+}
+
+.font_headers_medium() {
+	/*font-family: 'raleway_medium';
+	font-weight: normal;
+    font-style: normal;*/
+
+    .font_regular;
+}
+
+.font_headers_bold() {
+	/*font-family: 'raleway_medium';
+	font-weight: normal;
+    font-style: normal;*/
+
+    .font_bold;
+}
+
+
+
+
+// ---------------------------------------------- //
+
+
+html {
+	font-size:100%;
+	line-height: @txt_line_height;
+
+	font-family: @txt_font_family;
+	font-weight: normal;
+	text-align: left;
+
+	text-rendering: optimizeLegibility;
+
+	-webkit-font-smoothing: antialiased; // Mejora el pixelado, sobre todo para elementos con animación (fix webkit)
+	//-moz-osx-font-smoothing: grayscale; // Mejora el reventado de la tipo
+
+	-webkit-text-size-adjust: 100%; // Evita ampliación de textos al cambiar a landscape iphone
+}
+
+article {
+	.font_regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	a {
+		text-decoration: none;
+	}
+}
+
+	h1 { font-size:1.6em; }
+	h2 { font-size:1.3em; }
+	h3 { font-size:1.2em; }
+	h4 { font-size:1em; }
+	h5 { font-size:.9em; }
+
+	h1 {
+		.font_headers_medium;
+	}
+
+	h2 {
+		.font_light;
+	}
+
+	h3 {
+		.font_regular;
+	}
+	
+	h4,
+	h5 {
+		text-transform: uppercase;
+	}
+
+p,
+pre,
+address,
+blockquote,
+dt,
+dd,
+li,
+figcaption,
+table,
+textarea {}
+
+a {
+	text-decoration: none;
+}
+
+strong {
+	.font_bold;
+}
+
+figure {
+	line-height: 0;
+
+	a {
+		line-height: 0;
+	}
+}
+
+figcaption {
+	font-size: .9em;
+}
+
+dl {
+	article & {
+		font-size: 1.1em;
+	}
+}
+
+dt {
+	font-size: .8em;
+}
+dd {}
+
+
+label {
+	.invalid & {
+		.font_bold;
+	}
+
+	&.invalid {
+		.font_regular;
+	}
+}
+
+input,
+textarea,
+select {
+	.font_regular;
+}
+
+
+
+
+

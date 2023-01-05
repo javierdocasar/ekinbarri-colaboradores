@@ -1,0 +1,42 @@
+.icon-wf() {
+  font-family: "icons";
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  width: 1em;
+  margin-right: .5em;
+ 
+  // For safety - reset parent styles, that can break glyph codes
+  font-variant: normal;
+  text-transform: none;
+     
+  // fix buttons height, for twitter bootstrap
+  line-height: inherit;
+ 
+  // Animation center compensation - margins should be symmetric
+  // remove if not needed
+  //margin-left: .2em;
+ 
+  // you can be more comfortable with increased icons size
+  //font-size: 110%;
+ 
+  // Uncomment for 3D effect
+  // text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	&:before {
+		.icon-wf;
+	}
+}
+
+// Tablers Icons
+.icon {
+	stroke-width: 1.5;
+}

@@ -1,0 +1,57 @@
+html {
+	.loading, 	// Todo
+	.updating,	// Tablas
+	.waiting {	// Botones
+		&:before {
+			color: transparent !important;
+		}
+		&:after {
+			border-color: @color_link_i; border-right-color: #fff;
+			border-style: solid;
+			border-width: @icon_loading_border;
+			//box-shadow: 0 0 0 .3em rgba(255,255,255,1);
+			content: '' !important;
+			display: inline-block;
+			margin: auto;
+			position: absolute;
+			z-index: 2;
+			border-radius: 100%;
+			animation: a-loading @v-loading linear infinite;
+		}
+	}
+	.loading,
+	.updating {
+		min-height: 8rem;
+		&:after {
+			//margin-top: -(@icon_loading_size * .25);
+			width: @icon_loading_size;
+			height: @icon_loading_size;
+			left: @panel_pad_h;
+			top: @panel_pad_h;
+		}
+	}
+		.loading {
+			position: relative;
+			& > * {
+				display: none !important;
+			}
+		}
+		.updating {
+			& > * {
+				opacity: .2;
+			}
+			thead {
+				border:none;
+			}
+		}
+	.waiting {
+		background-color: #fff !important;
+		color: @negro !important;
+		&:after {
+			margin: auto;
+			width: @icon_waiting_size;
+			height: @icon_waiting_size;
+			left: @button_pad_h; top: 0; bottom: 0;
+		}
+	}
+}

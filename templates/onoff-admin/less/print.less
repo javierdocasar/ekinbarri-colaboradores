@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+* {
+	background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+a,
+a:visited {
+    text-decoration: underline;
+}
+
+/*a[href]:after {
+    content: " (" attr(href) ")";
+}*/
+
+abbr[title]:after {
+    content: " (" attr(title) ")";
+}
+
+// Don't show links for images, or javascript/internal links
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after* {
+    content: "";
+}
+
+pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+}
+
+thead {
+    display: table-header-group; /* h5bp.com/t */
+}
+
+tr,
+img {
+    page-break-inside: avoid;
+}
+
+img {
+    max-width: 100% !important;
+}
+
+@page {
+    margin: 0.5cm;
+}
+
+p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+}
+
+h2,
+h3 {
+    page-break-after: avoid;
+}
+
+
+/* ==========================================================================*/
+
+
+
+
+
+@import "_vars.less";
+@import "base/typo.less";
+@import "base/html.less";
+
+
+
+
+
+
+/*********************	Fonts
+*/
+
+h1 {
+	.font_light;
+	font-size:	2.4em;
+
+	margin-bottom: 2em;
+
+	clear: both;
+}	
+
+h2,
+h3 {
+	.font_bold;
+	font-size:	1.2em;
+	text-transform: uppercase;
+
+	//margin-top:0;
+	margin-bottom: 2em;
+
+	//float:left;
+}
+
+
+
+
+
+//—————————————————————————————————————————————————————————————	HTML
+
+@page {
+	margin: 20mm 0mm; // No funciona en safari, si en Firefox
+}
+
+html {
+	margin:0;
+	padding:0 1cm 0 1.5cm;
+
+	height: auto;
+	min-height: initial;
+}
+
+body {
+	font-size: 60%;
+}
+
+hr {
+	display:none !important;
+}
+
+table {
+	border-collapse: separate;
+
+	line-height: 1.6em;
+
+	width: 100%;
+
+	page-break-inside:avoid;
+
+	* {
+		margin: 0;
+	}
+
+	th, td {
+		border-width: 0 0 1pt;
+		border-color: #000 !important;
+	}
+
+		thead th {
+			border-style: solid;
+		}
+
+		td {
+			border-style: dotted;
+		}
+
+	th {
+		.font_bold;
+
+		padding: 0 .5em 1em 0;
+	}
+
+	td {
+		padding: 1em .5em 1em 0;
+	}
+}
+
+	thead {
+	}
+
+	tbody {
+	}
+
+	tfoot {
+	}
+
+form {
+}
+
+input,
+textarea,
+select {
+	display:none;
+}
+
+button {
+	display:none !important;
+}
+
+fieldset {
+	border:none;
+
+	margin:0;
+	padding:2em 0;
+
+	page-break-inside:avoid;
+}
+
+
+
+//—————————————————————————————————————————————————————————————	Bloques
+
+#header,
+#system-message-container,
+#sitemap,
+#top,
+#bottom,
+
+#user-select,
+
+#notes,
+#alerts,
+
+.nav-actions,
+.nav-form,
+.nav-footer,
+.nav-view,
+
+.list-search {
+	display: none !important;
+}
+
+#right {
+	margin-top: 2em;
+
+	float: left;
+}
+
+#user {
+	p {
+		.font_bold;
+
+		margin: 0;
+
+		display: inline-block;
+
+		&:before {
+			content: 'Usuario: ';
+			.font_light;
+			font-size:.9em;
+		}
+	}
+}
+
+#footer {
+	font-size: .9em;
+
+	margin-top: 2em;
+
+	float: right;
+
+	&:before {
+		content:'Basquetour MICE';
+		font-size:.9em;
+
+		float:right;
+	}
+}
+
+
+//—————————————————————————————————————————————————————————————	Nav
+
+.nav-categories,
+.nav-filter {
+	margin: 0 0 1em;
+
+	float: left;
+
+	ul {
+		margin:0;
+		padding:0;
+	}
+
+	li {
+		display:none !important;
+
+		&.active {
+			font-size: .9em;
+
+			display:inline-block !important;
+
+			& > a {
+				.font_bold;
+
+				&:before {
+					.font_light;
+				}
+			}
+		}
+	}
+}
+
+	.nav-categories {
+		li {
+			&.active {
+				& > a
+				{
+					&:before {
+						content: 'Categoría: ';
+					}
+				}
+			}
+		}
+	}
+
+	.nav-filter {
+		li {
+			&.active {
+				& > a
+				{
+					&:before {
+						content: 'Listado: ';
+					}
+				}
+			}
+		}
+
+		.nav-categories + & {
+			margin-left: 2em;
+		}
+	}
+
+.nav-pager {
+	.results {
+		&:before {
+			content: ' de ';
+		}
+	}
+}
+
+
+//—————————————————————————————————————————————————————————————	Views
+
+
+.detail,
+.select,
+.relation,
+.subrelation,
+.direct {
+	display:none;
+}
+
+html.view-detail {
+	#calendar,
+	.list.off {
+		display:none;
+	}
+
+	.detail {
+		display:block;
+	}
+
+	h3 {
+		margin-bottom: .5em;
+	}
+}
+
+html.view-direct {
+	#calendar,
+	.list.off {
+		display:none;
+	}
+
+	.direct {
+		display:block;
+	}
+
+	h3 {
+		margin-bottom: .5em;
+	}
+}
+
+html.view-relation,
+html.view-subrelation {
+	#calendar,
+	.list.off {
+		display:none;
+	}
+
+	.detail,
+	.relation {
+		display:block;
+	}
+
+		.detail {
+			h1 {
+				margin-bottom: 1em;
+			}
+
+			form > *:not(.header) {
+				display:none;
+			}
+		}
+
+	h3 {
+		margin-bottom: .5em;
+	}
+}
+
+
+//—————————————————————————————————————————————————————————————	Componentes de secciones
+
+.monitor {
+	margin-bottom: 1em;
+}
+
+
+//—————————————————————————————————————————————————————————————	Utils
+
+// Calendar
+
+	//@import "_print.utils/fullcalendar/fullcalendar.print.less";
+
+
+// Token input
+
+	.token-input-list {
+		margin:0;
+		padding: 0;
+
+		li {
+			list-style: none;
+		}
+
+		//& ~ .value-print,
+		.token-input-delete-token {
+			display: none !important;
+		}
+	}
+
+
+
+//—————————————————————————————————————————————————————————————	Specifics
+
+
+.hidden,
+.no-printable {
+	display:none !important;
+}
+
+
+
+
+
+

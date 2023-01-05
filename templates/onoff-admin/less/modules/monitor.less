@@ -1,0 +1,89 @@
+.monitor {
+	padding: @panel_pad_v @panel_pad_h;
+	flex: 1 auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	gap: @panel_pad_v @panel_pad_h*2;
+	dl {
+		text-align: right;
+		margin: 0;
+		display: inline-block;
+		&.important {
+			dt {
+				.font_bold;
+			}
+			dd {
+				.font_regular;
+			}
+		}
+		&.ok {
+			color: @color_ok_ii;
+		}
+		&.warning {
+			color: @color_warning_ii;
+		}
+	}
+	dt {
+		font-size: .76em;
+		line-height: 1.2;
+	}
+	dd {
+		font-size: 1.2em;
+		span {
+			font-size: .7em;
+			vertical-align: top;
+		}
+		&.euro {
+			&:after {
+				content: ' €';
+				font-size: .8em;
+			}
+		}
+	}
+	.moneda {
+		margin-left: .2em;
+	}
+	.separator {
+		margin: 0 1rem 1rem;
+		position: relative;
+		overflow: visible;
+		&:before {
+			border-width: @linea_1 0 0;
+			border-style: solid;
+			border-color: @separator_line_color;
+			content: '';
+			margin: auto;
+			max-width: 3em;
+			min-width: @linea_1;
+			min-height: @linea_1;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			display: block;
+		}
+	}
+}
+	/*.monitor-a {
+		color: mix(@monitor-color-a, @txt_color);
+		table & {
+			background-color: mix(@monitor-color-a, #fff, 10%);
+			border-color: mix(@monitor-color-a, @separator_line_color, 5%);
+		}
+	}
+	.monitor-b {
+		color: mix(@monitor-color-b, @txt_color);
+		table & {
+			background-color: mix(@monitor-color-b, #fff, 10%);
+			border-color: mix(@monitor-color-b, @separator_line_color, 5%);
+		}
+	}
+	.monitor-c {
+		color: mix(@monitor-color-c, @txt_color);
+		table & {
+			background-color: mix(@monitor-color-c, #fff, 10%);
+			border-color: mix(@monitor-color-c, @separator_line_color, 5%);
+		}
+	}*/

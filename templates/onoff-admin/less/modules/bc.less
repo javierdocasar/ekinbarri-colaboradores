@@ -1,0 +1,25 @@
+.bc {
+	padding: 0 @panel_pad_v;
+	// Elements
+		.level {
+			padding-left: 0;
+			padding-right: 0;
+			&:before {
+				@color_link_i_rgb: rgb(@color_link_i);
+				content: '/';
+				font-family: inherit;
+				font-size: 1.2em;
+				text-align: center;
+				vertical-align: baseline;
+				margin: 0;
+				width: 1.1em;
+				height: 1em;
+				display: inline-block;
+			}
+			&.last {
+				.font_bold;
+				&:before {
+				}
+			}
+		}
+}

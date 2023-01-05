@@ -1,0 +1,469 @@
+.fc {
+	width: 100%;
+	padding: @panel_pad_v @panel_pad_h;
+	table {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.fc-toolbar-chunk:nth-child(2) {
+		flex: 1 1 auto;
+	}
+		.fc-toolbar-title {
+			padding-left: 1rem;
+			padding-right: 1rem;
+			color: @gris_ii;
+			text-align: left;
+		}
+
+	.fc-button {
+		background-color: @color_link_i;
+		border: 0 none;
+		&:disabled {
+			background-color: #bbb;
+		}
+	}
+	.fc-closeButton-button {
+		.button;
+		margin-left: 1rem !important;
+		&:before {
+			content:'\e802'; // Equis
+		}
+	}
+
+	.fc-toolbar-ltr > .fc-toolbar-chunk > * + :not(:first-child) {
+		margin-left: .2rem;
+	}
+
+	.fc-daygrid-event {
+		padding: .25rem;
+	}
+
+}
+
+
+
+// Colors
+@calendar_bg_alpha:			70%;
+
+@calendar_gris:				@gris_iii;
+@calendar_gris_bg:			fade(mix(#fff, @calendar_gris, 70%), @calendar_bg_alpha);
+@calendar_gris_bg_h:		mix(#fff, @calendar_gris, 80%);
+@calendar_gris_txt:			mix(#000, @calendar_gris, 60%);
+@calendar_gris_border:		mix(#000, @calendar_gris, 10%);
+
+@calendar_azul:				#00e5e5;
+@calendar_azul_bg:			fade(mix(#fff, @calendar_azul, 70%), @calendar_bg_alpha);
+@calendar_azul_bg_h:		mix(#fff, @calendar_azul, 80%);
+@calendar_azul_txt:			mix(#000, @calendar_azul, 55%);
+@calendar_azul_border:		mix(#000, @calendar_azul, 10%);
+
+@calendar_verde:			#aaff00;
+@calendar_verde_bg:			fade(mix(#fff, @calendar_verde, 70%), @calendar_bg_alpha);
+@calendar_verde_bg_h:		mix(#fff, @calendar_verde, 80%);
+@calendar_verde_txt:		mix(#000, @calendar_verde, 55%);
+@calendar_verde_border:		mix(#000, @calendar_verde, 20%);
+
+@calendar_naranja:			#ffb300;
+@calendar_naranja_bg:		fade(mix(#fff, @calendar_naranja, 70%), @calendar_bg_alpha);
+@calendar_naranja_bg_h:		mix(#fff, @calendar_naranja, 80%);
+@calendar_naranja_txt:		mix(#000, @calendar_naranja, 55%);
+@calendar_naranja_border:	mix(#000, @calendar_naranja, 20%);
+
+@calendar_amarillo:			#ffee00;
+@calendar_amarillo_bg:		fade(mix(#fff, @calendar_amarillo, 70%), @calendar_bg_alpha);
+@calendar_amarillo_bg_h:	mix(#fff, @calendar_amarillo, 80%);
+@calendar_amarillo_txt:		mix(#000, @calendar_amarillo, 60%);
+@calendar_amarillo_border:	mix(#000, @calendar_amarillo, 15%);
+
+@calendar_rojo:				#e53900;
+@calendar_rojo_bg:			fade(mix(#fff, @calendar_rojo, 70%), @calendar_bg_alpha);
+@calendar_rojo_bg_h:		mix(#fff, @calendar_rojo, 80%);
+@calendar_rojo_txt:			mix(#000, @calendar_rojo, 50%);
+@calendar_rojo_border:		mix(#000, @calendar_rojo, 10%);
+
+.fc {
+	.calendar-gray
+	{
+		background-color: @calendar_gris_bg;
+		border-color: @calendar_gris_border;
+		color: @calendar_gris_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_gris_bg_h;
+			color: inherit;
+		}
+	}
+
+	.calendar-blue
+	{
+		background-color: @calendar_azul_bg;
+		border-color: @calendar_azul_border;
+		color: @calendar_azul_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_azul_bg_h;
+			color: inherit;
+		}
+	}
+
+	.calendar-green
+	{
+		background-color: @calendar_verde_bg;
+		border-color: @calendar_verde_border;
+		color: @calendar_verde_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_verde_bg_h;
+			color: inherit;
+		}
+	}
+
+	.calendar-orange
+	{
+		background-color: @calendar_naranja_bg;
+		border-color: @calendar_naranja_border;
+		color: @calendar_naranja_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_naranja_bg_h;
+			color: inherit;
+		}
+	}
+
+	.calendar-yellow
+	{
+		background-color: @calendar_amarillo_bg;
+		border-color: @calendar_amarillo_border;
+		color: @calendar_amarillo_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_amarillo_bg_h;
+			color: inherit;
+		}
+	}
+
+	.calendar-red
+	{
+		background-color: @calendar_rojo_bg;
+		border-color: @calendar_rojo_border;
+		color: @calendar_rojo_txt;
+
+		* {
+			color: inherit;
+		}
+
+		&:active,
+		html:not(.touch) &:hover
+		{
+			background-color: @calendar_rojo_bg_h;
+			color: inherit;
+		}
+	}
+}
+
+/*
+// Buttons
+.fc-button
+{
+	&.fc-state-active
+	{
+		color: @button_txt_color_c;
+		border: @button_txt_color_c solid @linea_1;
+	}
+}
+
+	.fc-prev-button,
+	.fc-next-button
+	{
+		font-size: 1em;
+
+		span
+		{
+			display: none;
+		}
+	}
+
+		.fc-prev-button
+		{
+			&:before
+			{
+				content: "\2039";
+			}
+		}
+
+		.fc-next-button
+		{
+			&:before
+			{
+				content: "\203a";
+			}
+		}
+
+// Toolbar
+.fc-toolbar
+{
+	background-color: #fff;
+
+	.fc-left
+	{
+		padding-left: @panel_pad_h;
+		padding-top: @panel_pad_h;
+	}
+
+	.fc-right
+	{
+		padding-left: @panel_pad_h;
+		padding-right: @panel_pad_h;
+	}
+
+	.fc-center
+	{
+		text-align: center;
+
+		padding: @panel_pad_v 0 0;
+
+		float: right;
+
+		button
+		{
+			text-transform: none;
+
+			padding: .4rem .6rem;
+
+			&.fc-today-button
+			{
+				margin-right: 1em;
+			}
+		}
+	}
+}
+
+
+// Tables
+.fc th
+{
+	.font_regular;
+	font-size: .8em;
+
+	padding:0 1em .6em 0;
+}
+
+td
+{
+	&.fc-widget-header
+	{
+		border-width:0;
+	}
+
+	&.fc-today
+	{
+		background-color: @color_highlight_ii;
+	}
+
+		&:not(.fc-today)	// Es fin de semana
+		{
+			&.fc-sat,
+			&.fc-sun
+			{
+				background-color: @gris_iiiiii;
+			}
+		}
+}
+
+.fc-widget-content
+{
+	td
+	{
+		cursor:pointer;
+	}
+}
+
+// Elementos
+.fc-view-container
+{
+	//overflow-x: hidden;
+}
+
+.fc-time-grid-event
+{
+}
+
+.fc-axis
+{
+	width: @panel_pad_h !important;
+
+	&.fc-time
+	{
+		.font_bold;
+		font-size: .8em;
+	}
+}
+
+.fc-event
+{
+	background-color: #fff;
+	color: @gris_i;
+	border-width: @linea_1;
+	border-style: solid;
+	border-color: @gris_iii;
+	//.rounded;
+
+	//min-height: 3em;
+
+	//animation: @v-menus a-agenda-event-open @curva-general forwards;
+    //animation-iteration-count: 1;
+}
+
+.fc-content
+{
+	padding: .6em;
+
+	min-height: 1.3em;
+
+	.fc-month-view &,
+	.fc-agendaWeek-view &
+	{
+		padding: .2em;
+	}
+	
+	.fc-time
+	{
+		font-size: .7em;
+
+		margin-right: .5em;
+
+		display: inline-block;
+		float: left;
+
+		.fc-agendaWeek-view &,
+		.fc-agendaDay-view &
+		{
+			//display: none;
+		}
+	}
+
+	.fc-user,
+	.fc-title
+	{
+		.fc-month-view &
+		{
+			text-overflow: ellipsis;
+			white-space:nowrap;
+			overflow: hidden;
+		}
+	}
+
+		.fc-user
+		{
+			.font_bold;
+			font-size: .8em;
+
+			margin-bottom:.2em;
+
+			display: block;
+
+			.fc-month-view &,
+			.fc-agendaWeek-view &
+			{
+				font-size: .7em;
+			}
+
+			.fc-agendaDay-view &
+			{
+				float: right;
+
+				margin-left: 1em;
+				margin-bottom: 1em;
+			}
+		}
+
+		.fc-title
+		{
+			display: block;
+
+			.fc-month-view &,
+			.fc-agendaWeek-view &
+			{
+				font-size: .8em;
+			}
+
+			&.icon-procedure,
+			&.icon-email,
+			&.icon-call,
+			&.icon-meeting,
+			&.icon-abogacia,
+			&.icon-other,
+			&.icon-invoice
+			{
+				padding-left: 1.6em;
+
+				&:before
+				{
+					margin-left: -1.4em;
+				}
+			}
+		}
+}
+
+
+// Views
+.fc-month-view
+{
+	padding: @panel_pad_v @panel_pad_h;
+
+	//.scroll_touch_h;
+
+	.fc-day-number
+	{
+		font-size: 1.2em;
+	}
+}
+
+.fc-agendaWeek-view,
+.fc-agendaDay-view
+{
+	padding-top: @panel_pad_v;
+
+	.fc-axis
+	{
+		//border-right-color: transparent;
+	}
+
+	.fc-widget-content 
+	{
+		border-left-width: 0;
+	}
+}
+
+*/

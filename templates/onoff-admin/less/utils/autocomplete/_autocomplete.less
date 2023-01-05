@@ -1,0 +1,29 @@
+@import "autocomplete.less";
+
+.ui-autocomplete {
+	border-color: @input_line_color_a;
+	border-style: solid;
+	border-width: 0 @linea_2 @linea_2;
+
+	margin: 0 0 1em;
+	padding: 0;
+	
+	li {
+		color: @txt_link_color;
+
+		list-style:none;
+
+		margin: 0;
+		padding: @button_pad;
+
+		display: block;
+
+		cursor: pointer;
+	}
+
+	// Status
+	.ui-state-focus {
+		background-color: @color_link_bg;
+		color: @negro;
+	}
+}

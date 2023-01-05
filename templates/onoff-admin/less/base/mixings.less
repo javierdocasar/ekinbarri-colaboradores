@@ -1,0 +1,64 @@
+/*********************	General
+*/
+
+.placeholder-color (@color) {
+	::-webkit-input-placeholder { color:@color; }
+	:-moz-placeholder { color:@color; }
+	::-moz-placeholder { color:@color; }
+	:-ms-placeholder { color:@color; }
+}
+
+
+/*********************	Scroll
+*/
+
+
+.scroll_touch_h() {
+	display: flex;
+	flex-flow: row nowrap;
+	//align-items: center;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+.scroll_touch_v() {
+	//white-space: nowrap;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+/*********************	Ocultar
+*/
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+	display:none !important; visibility:hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden() {
+	border:0; clip:rect(0 0 0 0); height:1px; margin:-1px; padding:0; width:1px; position:absolute; overflow:hidden;
+
+	/*
+	 * Extends the .visuallyhidden class to allow the element to be focusable
+	 * when navigated to via the keyboard: h5bp.com/p
+	 */
+	&.focusable:active,
+	&.focusable:focus { clip:auto; height:auto; margin:0; overflow:visible; position:static; width:auto; }
+}
+
+//.visuallyhidden-off() { clip:auto; height:auto; margin:0; overflow:visible; position:static; width:auto; }
+
+
+
+
+

@@ -1,0 +1,49 @@
+@import "c3.less";
+
+.charts-container {
+	.panel_pad_l;
+	.panel_pad_r;
+	.panel_pad_b;
+
+	clear: both;
+}
+
+	.charts {
+		position: relative;
+		clear: both;
+	}
+
+	.chart-container {
+		background-color: @gris_iiiiii;
+		//border: @separator_line_color solid @linea_1;
+
+		padding: 4%;
+
+		position: relative;
+
+		& + & {
+			margin-top: .2em;
+		}
+	}
+
+	figure.chart {
+		.rounded;
+
+		position: relative;
+
+		svg {
+			max-width: 100%;
+		}
+
+		&:after,
+		figcaption {
+			.font_headers_light;
+			font-size: 1.4em;
+			.font_light;
+			text-align: center;
+
+			margin: 2em 0 3em;
+
+			display: block;
+		}
+	}

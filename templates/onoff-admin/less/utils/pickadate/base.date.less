@@ -1,0 +1,375 @@
+
+/* ==========================================================================
+   $BASE-DATE-PICKER
+   ========================================================================== */
+
+@import "variables.less";
+
+
+/**
+ * The picker box.
+ */
+.picker__box {
+   //padding: 0 1em;
+}
+
+
+/**
+ * The header containing the month and year stuff.
+ */
+.picker__header {
+    //text-align: center;
+
+    margin-top: 1.2em;
+    //padding-top: .3em;
+    padding-left: @panel_pad_h * .5;
+
+    position: relative;
+}
+
+
+/**
+ * The month and year labels.
+ */
+.picker__month,
+.picker__year {
+    font-size: 1em;
+   //.font_light;
+
+    display: inline-block;
+}
+
+    .picker__month
+    {
+        text-transform: capitalize;
+    }
+
+    .picker__year
+    {
+        margin-left: .3em;
+    }
+
+
+/**
+ * The month and year selectors.
+ */
+.picker__select--month,
+.picker__select--year {
+    border: 1px solid @border-select;
+    height: 2em;
+    padding: .5em; // For firefox
+    margin-left: .25em;
+    margin-right: .25em;
+
+    // For `tiny` width screens, move it up a bit.
+    @media ( min-width: @breakpoint-width-tiny ) {
+        margin-top: -.5em;
+    }
+}
+.picker__select--month {
+    width: 35%;
+}
+.picker__select--year {
+    width: 22.5%;
+}
+.picker__select--month:focus,
+.picker__select--year:focus {
+    border-color: @color-link;
+}
+
+
+/**
+ * The month navigation buttons.
+ */
+.picker__nav--prev,
+.picker__nav--next {
+    color: @button_txt_color;
+
+    font-size: 1.1em;
+    text-align: center;
+
+    width: 2.25em;
+    height: 2em;
+    top: -.4em;
+    position: absolute;
+
+    cursor: pointer;
+
+    &:before
+    {
+        .icon-wf;
+        font-size: 1.6em;
+
+        margin: 0;
+    }
+
+    &:hover
+    {
+        color: @button_txt_color_h;
+    }
+
+    &:active
+    {
+        color: @button_txt_color_a;
+    }
+}
+    .picker__nav--prev
+    {
+        right: 2.25em;
+        
+        &:before
+        {
+            content: "\2039";
+        }
+    }
+
+    .picker__nav--next
+    {
+        right: 0;
+
+        &:before
+        {
+           content: "\203a";
+        }
+    }
+
+// Disabled month nav.
+.picker__nav--disabled,
+.picker__nav--disabled:hover,
+.picker__nav--disabled:before,
+.picker__nav--disabled:before:hover {
+    cursor: default;
+    background: none;
+    border-right-color: @disabled-things-bg;
+    border-left-color: @disabled-things-bg;
+}
+
+
+
+
+/**
+ * The calendar table of dates
+ */
+.picker__table {
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: inherit;
+    width: 100%;
+    margin-top: .75em;
+    margin-bottom: .5em;
+
+    // For `small` screens, increase the spacing a tad.
+    @media ( min-height: @breakpoint-small ) {
+        margin-bottom: .75em;
+    }
+}
+
+// Remove browser stylings on a table cell.
+.picker__table td {
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * The weekday labels
+ */
+.picker__weekday {
+    border-bottom: @blocks_line_color solid @linea_1;
+
+    width: 14.285714286%; // 100/7
+    font-size: .75em;
+    padding-bottom: .25em;
+    //color: @year-weekday-label;
+    font-weight: 500;
+
+    /* Increase the spacing a tad */
+    @media ( min-height: @breakpoint-small ) {
+        padding-bottom: .5em;
+    }
+}
+
+
+/**
+ * The days on the calendar
+ */
+.picker__day {
+    border: @linea_1 solid transparent;
+    border-radius: .2em;
+
+    margin: .1em;
+    padding: .3125em 0;
+    cursor: pointer;
+}
+
+// Today.
+.picker__day--today {
+    background-color: @color_highlight_ii;
+
+    position: relative;
+}
+/*.picker__day--today:before {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 0;
+    height: 0;
+    border-top: .5em solid @color-link-tag;
+    border-left: .5em solid transparent;
+}*/
+
+// Disabled day.
+.picker__day--disabled:before {
+    border-top-color: @disabled-tag;
+}
+
+// Out of focus days.
+.picker__day--outfocus {
+    color: @disabled-things-text;
+}
+
+// Hovered date picker items.
+.picker__day--infocus:hover,
+.picker__day--outfocus {
+    &:hover
+    {
+        .picker-item-hovered;
+    }
+
+    &:active
+    {
+        .picker-item-active;
+    }
+}
+
+// Highlighted and hovered/focused dates.
+.picker__day--highlighted {
+    .picker-item-highlighted;
+}
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+    .picker-item-hovered;
+}
+
+// Selected and hovered/focused dates.
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+    .picker-item-selected;
+}
+
+// Disabled dates.
+.picker__day--disabled,
+.picker__day--disabled:hover,
+.picker--focused .picker__day--disabled {
+    .picker-item-disabled;
+}
+
+// Disabled and highlighted dates.
+.picker__day--highlighted.picker__day--disabled,
+.picker__day--highlighted.picker__day--disabled:hover {
+    background: @disabled-highlighted-things-bg;
+}
+
+
+.picker__footer {
+    text-align: right;
+
+    padding: @panel_pad_v*.5 @panel_pad_h*.5;
+
+    right: 4.4em;
+    top: .1em;
+    position: absolute;
+}
+
+// Today, clear, and close buttons.
+.picker__button--today,
+.picker__button--clear,
+.picker__button--close {
+    font-size: .8em;
+
+    min-width: 3em;
+
+    /*&:hover
+    {
+        .picker-item-hovered;
+        border-bottom-color: @color-link-hover;
+    }
+
+    &:focus
+    {
+        background: @color-link-hover;
+        border-color: @color-link;
+        outline: none;
+    }*/
+
+    &:before {
+
+        .icon-wf;
+    }
+}
+
+
+    .picker__button--today
+    {
+        
+    }
+
+    .picker__button--clear
+    {
+        color: @color_warning_iii;
+
+        &:before
+        {
+            content:'\e811'; // Papelera
+        }
+
+        &:hover
+        {
+            color: @negro;
+        }
+
+        &:active
+        {
+            background-color: transparent;
+            color: @negro;
+        }
+    }
+
+    .picker__button--close
+    {
+        background-color: @gris_iiiii;
+        color: @gris_i;
+
+        float: left;
+
+        &:before {
+            content:'\0078'; // Equis
+        }
+
+        &:hover
+        {
+            color: @negro;
+        }
+
+        &:active
+        {
+            background-color: @gris_i;
+            color: #fff;
+        }
+    }
+
+// Today when “disabled”.
+.picker__button--today[disabled],
+.picker__button--today[disabled]:hover {
+    .picker-item-disabled;
+}
+.picker__button--today[disabled]:before {
+    border-top-color: @disabled-tag;
+}
+
+
+

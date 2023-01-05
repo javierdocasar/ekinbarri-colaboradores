@@ -1,0 +1,18 @@
+#modal-container {
+	background-color: fade(@gris_iiiii, 95%);
+	display:block;
+	left:0; right:0; top:0; bottom:0;
+	position:fixed;
+	z-index:9999;
+	@mdia (max-width: @media_n) {
+		button {
+			margin: .3em 0 0;
+		}
+	}
+}
+	#modal-content {
+		text-align:center;
+		margin-top:12%;
+		margin-left:auto; margin-right:auto;
+		width:@main_w; max-width:@txt_w_max;
+	}

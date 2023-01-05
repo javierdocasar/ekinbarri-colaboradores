@@ -1,0 +1,43 @@
+.files {
+	li {
+		list-style: none;
+	}
+	.file {
+		background-color: @gris_iiiiii;
+		border: @gris_iiiii solid @linea_1;
+		padding: .5rem;
+		width: @main_w;
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-between;
+		// States
+			&:hover {
+				background-color: @color_highlight_i;
+			}
+	}
+		.file_actions {
+			text-align: right;
+			padding: .5rem;
+			flex: 1 auto;
+		}
+		.file_title {
+			padding: .5rem;
+			flex-basis: 100%;
+			input {
+				max-width: 100%;
+			}
+		}
+		.file_info {
+			flex: 1 auto;
+			display: flex;
+			dl {
+				margin: .5rem;
+			}
+				dt {
+					font-size: .7em;
+				}
+				dd {
+					font-size: 1.2em;
+				}
+		}
+}

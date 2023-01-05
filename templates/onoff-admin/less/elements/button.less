@@ -1,0 +1,487 @@
+button,
+.button {
+	background-color: @button_base_color;
+	//color: @button_txt_color;
+	border-color: @button_border_color;
+	border-style: solid;
+	border-width: @linea_1;
+	border-radius: @border_radius;
+	outline: 0; // Elimina halo en Chrome al hacer focus
+	font-size: .92rem;
+	text-decoration: none;
+	text-align: center;
+	line-height: 1.3em;
+	white-space:nowrap;
+	.font_regular;
+	margin-left: auto;
+	margin-right: auto;
+	padding: @button_pad;
+	display:inline-block;
+	position: relative;
+	cursor:pointer;
+	user-select: none;
+	&:before {
+		color: inherit;
+		.icon-wf;
+	}
+	&:hover {
+		background-color: @button_base_color_h;
+		color: @button_txt_color_h;
+		border-color: @button_border_color_h;
+	}
+	&:active {
+		background-color: @button_base_color_a;
+		color: @button_txt_color_a;
+		border-color: @button_border_color_a;
+		transform: translateY(1px);
+	}
+	&.big {
+		border-color: @button_border_color;
+		border-style: solid;
+		border-width: @linea_1;
+		font-size: 1em;
+		font-weight: normal;
+		text-align: left;
+		line-height: 1.4em;
+		white-space: inherit;
+		padding: @button_pad_big;
+		&:before,
+		&:after {
+			font-size: 1.4em;
+			line-height: 1em;
+		}
+		&:hover {
+			border-color: @button_border_color_h;
+		}
+		&:active {
+			border-color: @button_border_color_a;
+		}
+		@media (max-width: @media_s) {
+			text-align: center;
+			width: 100%;
+			display: block;
+		}
+		strong {
+			font-size: 1.2rem;
+			display:block;
+		}
+	}
+	
+	&.full {
+		text-align:center;
+		padding-left: @button_icon_pad; padding-right: @button_icon_pad;
+		
+		width:100%;
+		display:block;
+		position: relative;
+		&:before {
+			left: @button_pad_h;
+			position: absolute;
+		}
+		&:after {
+			left: @button_pad_h;
+			position: absolute;
+		}
+	}
+
+
+
+
+	////////////////////////////////////////////////// TIPOS
+	&.edit {
+		&:before {
+			content:'\e80f'; // Lapiz
+			//content:'\e828'; // Docu + Lapiz
+		}
+	}
+	&.go {
+		&:before {
+			content:'\e80e'; // Flecha derecha
+		}
+	}
+	&.view {
+		&:before {
+			content:'\e818'; // Ojo
+		}
+	}
+	&.document {
+		&:before {
+			content: '\e80b'; // Folio
+		}
+	}
+	&.pointer {
+		&:before {
+			content: '\e812'; // Pointer
+		}
+	}
+	&.map {
+		&:before {
+			content: '\e813'; // Mapa
+		}
+	}
+	/*&.featured {
+		&:before {
+			content: '\e819'; // Star
+		}
+	}*/
+	/*&.email-open {
+		&:before {
+			content: '\e822'; // Sobre abierto
+		}
+	}*/
+	&.select {
+		&:before {
+			content:'\e809'; // Más
+		}
+	}
+	// Archivos adjuntos
+	&.remove {
+		//background-color: #fff;
+		border-color: @color_warning_iii;
+		color: @color_warning_iii;
+		&:before {
+			content:'\e824'; // Papelera
+		}
+		&:hover {
+			background-color: fade(@color_warning_i, 5%);
+			color: @color_warning_iii;
+			border-color: @negro;
+		}
+		&:active {
+			background-color: @color_warning_ii;
+			color: #fff;
+			border-color: @color_warning_iii;
+		}
+	}
+	&.export {
+		&:before {
+			content: '\e81b';
+		}
+	}
+	// Nuevo email
+	/*&.attach {
+		&:before {
+			content:'\e823'; // Clip
+		}
+	}*/
+	//Formularios subir/crear archivo (Google Drive)
+	&.upload {
+		&:before {
+			content:'\e810'; // Nuve con flecha
+		}
+	}
+		/*&.upload.big {
+			font-size:1.1rem;
+			&:before {
+				font-size:1.6rem;
+			}
+		}*/
+
+	// Mapa
+	/*&.map {
+		&:before {
+			content:'\e813'; // Plano
+		}
+	}*/
+
+
+	/*
+	Multiples estados
+	*/
+	// Tiene acceso (permisos usuario)
+	/*&.access {
+		&:before {
+			content: '\e873'; // Candado abierto
+		}
+		&.block {
+			&:before {
+				content: '\e872'; // Candado cerrado
+			}
+		}
+	}*/
+
+
+	/*
+	Footer formularios (Buscar todo, Auditoría)
+	Footer formularios (Recordar usuario y contraseña)
+	*/
+	&.search,
+	&.filter {
+		&:before {
+			content:'\e801'; // Lupa
+		}
+	}
+	/*&.delete,
+	li.delete & {
+		background-color: @gris_iiiiii;
+		color: @gris_ii; //@color_warning_iii;
+		//border-color:@gris_i;
+		&:before {
+			//content:'\e810'; // Papelera
+		}
+		&:hover {
+			//background-color:@gris_i;
+			color: @negro; //@color_warning_ii;
+			//border-color:@gris_i;
+		}
+		&:active {
+			background-color: transparent; //mix(@color_warning_i, #fff);
+			color: @negro; // @color_warning_iii;
+			//border-color:@gris_iiii;
+		}
+	}*/
+
+
+	/*
+	Botonera acciones
+	*/
+	li.new > & {
+		&:before {
+			content:'\e822'; // Símbolo más
+		}
+	}
+	li.save > & {
+		&:before {
+			content:'\e803'; // Tip ok
+		}
+	}
+	li.test > & {
+		&:before {
+			content:'\e816'; // Ojo
+		}
+	}
+	/*li.send > & {
+		&:before {
+			content:'\e827'; // Avión de papel
+		}
+	}
+	li.send-receive > & {
+		&:before {
+			content:'\e801'; // Sobre
+		}
+	}
+	li.reply > & {
+		&:before {
+			content: '\e82d'; // Flecha de vuelta
+		}
+	}
+	li.reply-all > & {
+		&:before {
+			content: '\e82e'; // Doble flecha de vuelta
+		}
+	}
+	li.forward > & {
+		&:before {
+			content: '\e82f'; // Flecha de vuelta a la derecha
+		}
+	}*/
+	li.login > & {
+		/*&:before {
+			content: '\e872'; // Candado abierto
+		}*/
+	}
+	li.logout > & {
+		background-color: @gris_iiiii;
+		color: @gris_i;
+		/*&:before {
+			content: '\e872'; // Candado cerrado
+		}*/
+		&:hover {
+			//background-color: @color_warning_ii;
+			//border-color: @color_warning_iii;
+		}
+		&:active {
+			//border-color: @color_warning_i;
+		}
+	}
+	li.go > & {
+		&:before {
+			content:'\e816'; // Flecha derecha
+		}
+	}
+	li.export > &{
+		&:before {
+			content:'\e81a'; // Flecha download
+		}
+	}
+	li.print > & {
+		&:before {
+			content: '\e80a'; // Folio
+		}
+	}
+	li.search-list > &,
+	li.filter-list > & {
+		&:before {
+			content:'\e801'; // Lupa
+		}
+	}
+	li.realtime > & {
+		&:before {
+			content:'▶';
+			font-size: 1em;
+		}
+	}
+		li.realtime.active > & {
+			background-color: @color_highlight_i;
+			animation: 1s b-realtime-active infinite;
+			&:before {
+				content:'▎▎';
+				font-size: 1em;
+				letter-spacing: -.5em;
+			}
+		}
+	li.config-list > & {
+		&:before {
+			content: '\e817'; // Rueda dentada (Configurar)
+		}
+	}
+	li.remove > & {
+		&:before {
+			content:'\e824'; // Papelera
+		}
+	}
+	&.close,
+	li.close > & {
+		//background-color: @gris_iii;
+		//color: #fff;
+		border: @linea_1 solid @color_link_iii;
+		&:before {
+			content:'\e802'; // Equis
+		}
+		&:hover {
+			//background-color: @gris_ii;
+			//color: @negro;
+		}
+		&:active {
+			//background-color: @gris_i;
+			//color: #fff;
+		}
+	}
+	&.email,
+	li.email & {
+		&:before {
+			content: '\e807'; // Sobre
+		}
+	}
+	&.calendar,
+	li.calendar & {
+		&:before {
+			content: '\e804'; // Calendario
+		}
+	}
+	/*
+	Botonera paginador
+	*/
+	li.prev & {
+		&:before {
+			content: "\e805"; // Flecha (contenido) izq.
+		}
+	}
+	li.next & {
+		&:before {
+			content: "\e806"; // Flecha (contenido) der.
+		}
+	}
+
+	/*
+	Botones iconos fijos
+	*/
+	&.edit,
+	&.go,
+	&.view,
+	&.document,
+	&.map,
+	//&.email-open,
+	&.select,
+	&.remove,
+	&.attach,
+	&.upload,
+	&.access,
+	&.search,
+	&.filter,
+	//&.delete,
+	//li.delete &,
+	li.new &,
+	li.save &,
+	li.test &,
+	/*li.send &,
+	li.send-receive &,
+	li.reply &,
+	li.reply-all &,
+	li.forward &,*/
+	li.login,
+	li.logout,
+	li.go &,
+	li.export &,
+	li.print &,
+	li.search-list &,
+	li.filter-list &,
+	li.remove &,
+	&.close,
+	li.close &,
+	&.email,
+	li.email &,
+	&.calendar,
+	li.calendar & {
+		padding-left: @button_icon_pad;
+		&:before {
+			left: .6em;
+			position: absolute;
+		}
+	}
+
+}
+	
+	/*
+	Botones especiales
+	*/
+	li.save button {
+		background-color: @color_ok_ii;
+		color: #fff;
+		border: 0 none;
+		.font_bold;
+		&:hover {
+			background-color: @color_ok_iii;
+			color: #fff;
+		}
+		&:active {
+			background-color: @color_ok_i;
+			color: @color_ok_iii;
+		}
+	}
+	/*
+	Botones destacados
+	*/
+	.button.edit,
+	button.search,
+	button.filter,
+	//button.submit,
+	li.send button,
+	li.reply button,
+	li.login button {
+		//background-color: @color_link_iii;
+		//color: #fff;
+		border: @linea_1 solid @color_link_iii;
+		.font_bold;
+		&:hover {
+			//background-color: @color_link_ii;
+			//color: #fff;
+		}
+		&:active {
+			background-color: @button_base_color_a;
+			color: @button_txt_color_a;
+		}
+	}
+	li.new button {
+		.font_bold;
+	}
+	/*
+	Botones realzados
+	*/
+	.button.go {
+		background-color: @color_link_bg;
+		&:active {
+			background-color: @button_base_color_a;
+			color: @button_txt_color_a;
+		}
+	}
