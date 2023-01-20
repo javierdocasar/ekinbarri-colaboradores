@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="authentication" method="upgrade">
+	<name>Autenticación via API - Oauth2</name>
+	<author>Doka</author>
+	<creationDate>Abril 2020</creationDate>
+	<copyright>Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>doka@onoff.es</authorEmail>
+	<authorUrl>www.onoff.es</authorUrl>
+	<version>3.0.0</version>
+	<description>Autenticación via API - Oauth2</description>
+	<files>
+		<filename plugin="api">api.php</filename>
+	</files>
+	<languages>
+	</languages>
+	<config>
+	</config>
+</extension>
