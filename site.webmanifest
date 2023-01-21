@@ -1,0 +1,31 @@
+{
+    "theme_color": "#299970",
+    "background_color": "#299970",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/index.php",
+    "name": "ekinBarri - Colaboradores",
+    "short_name": "ekinBarri",
+    "icons": [
+        {
+            "src": "/templates/onoff-admin/manifest/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/templates/onoff-admin/manifest/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/templates/onoff-admin/manifest/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/templates/onoff-admin/manifest/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

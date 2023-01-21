@@ -80,12 +80,8 @@ $entity = "pais"
     <form id="formData" method="post">
         <nav class="nav-actions">
             <ul>
-                <?php if (in_array($entity.'_delete', $this->permissions)):?>
-                    <li class="remove"><button type="button" id="delete">Eliminar</button></li>
-                <?php endif; ?>
-                <?php if (in_array($entity.'_update', $this->permissions)):?>
-                    <li class="save"><button type="button" id="save">Guardar</button></li>
-                <?php endif; ?>
+                <li class="remove"><button type="button" id="delete">Eliminar</button></li>
+                <li class="save"><button type="button" id="save">Guardar</button></li>
                 <li class="close"><button type="button" id="close">Cerrar</button></li>
             </ul>
         </nav>
@@ -113,7 +109,7 @@ $entity = "pais"
             </div>
         </fieldset>
         <fieldset>
-            <legend>Observaciones</legend>
+            <legend>Contactos</legend>
             <div class="form-element">
                 <label for="observaciones">Observaciones</label>
                 <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
@@ -126,8 +122,21 @@ $entity = "pais"
                 <label  for="upated_at">Actualizado</label>
                 <input  data-field="updated_at" type="text" name="updated_at" id="updated_at" placeholder=""/>
             </div>
-
-
+        </fieldset>
+        <fieldset>
+            <legend>Gestiones</legend>
+            <div class="form-element">
+                <label for="observaciones">Observaciones</label>
+                <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
+            </div>
+            <div class="form-element off">
+                <label  for="created_at">Creado</label>
+                <input  data-field="created_at" type="text" name="created_at" id="created_at" placeholder=""/>
+            </div>
+            <div class="form-element off">
+                <label  for="upated_at">Actualizado</label>
+                <input  data-field="updated_at" type="text" name="updated_at" id="updated_at" placeholder=""/>
+            </div>
         </fieldset>
 
 
