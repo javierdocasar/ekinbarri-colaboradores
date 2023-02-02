@@ -5,7 +5,7 @@ $entity = "pais"
 ?>
 <section class="list">
     <div class="header">
-        <h3>Empresas<span class="info" id="textSearch"></span></h3>
+        <h3>Actuaciones<span class="info" id="textSearch"></span></h3>
         <nav id="nav-actions" class="data nav-actions">
             <ul>
                 <!--<li class="search-list" ><button id="openFilter">Filtrar</button></li>-->
@@ -90,55 +90,43 @@ $entity = "pais"
         </div>
         <fieldset>
             <legend>Datos Generales</legend>
-            <div class="form-element checkbox">
-                <input data-serialize="true" data-field="activo" type="checkbox" data-value="prop" data-params="checked" name="activo" id="activo">
-                <label for="activo">Activo</label>
+            <div class="form-element">
+                <label class="mandatory" for="id_empresa">Empresa</label>
+                <select data-serialize="true" data-field="id_empresa" data-preload="id_empresa" name="id_empresa" id="id_empresa" required>
+                    <option value="" selected>Seleccionar...</option>
+                </select>
             </div>
             <div class="form-element">
-                <label class="mandatory" for="pais">Código</label>
-                <input data-serialize="true" data-field="codigo" type="text" name="codigo" id="codigo" placeholder="Código" required/>
+                <label class="mandatory" for="id_contacto">Contacto</label>
+                <select data-serialize="true" data-field="id_contacto" name="id_contacto" id="id_contacto" required>
+                    <option value="" selected>Seleccionar...</option>
+                </select>
+            </div>
+            <div class="form-element compo serialize-datetime">
+                <label for="fecha_date" class="group-label mandatory">Fecha</label>
+                <div class="form-element span-2">
+                    <label for="fecha_date">Fecha</label>
+                    <a href='#' class='action seldate' tabindex='-1'>Abrir</a>
+                    <input type="text" value="" data-field="fecha_date"  data-datetime="fecha"  name="fecha_date" id="fecha_date" placeholder="dd/mm/yyyy" class="dateES mDate"/>
+                </div>
+                <div class="form-element span-2">
+                    <label for="fecha_time">Hora</label>
+                    <a href='#' class='action seltime' tabindex='-1'>Abrir</a>
+                    <input value="" type="text"  data-field="fecha_time"  data-datetime="fecha"  name="fecha_time" id="fecha_time" placeholder="hh:mm" class="time mTime"/>
+                </div>
+                <input type="hidden" value="" data-serialize="true" data-field="fecha" name="fecha" id="fecha"/>
             </div>
             <div class="form-element">
-                <label class="mandatory" for="empresa">Empresa</label>
-                <input data-serialize="true" data-field="empresa" type="text" name="empresa" id="empresa" placeholder="Empresa" required/>
+                <label class="mandatory" for="id_modo_contacto">Modo Contacto</label>
+                <select data-serialize="true" data-field="id_modo_contacto" data-preload="id_modo_contacto" name="id_modo_contacto" id="id_modo_contacto" required>
+                    <option value="" selected>Seleccionar...</option>
+                </select>
             </div>
-
-            <div class="form-element">
-                <label class="mandatory" for="acronimo">Acrónimo</label>
-                <input data-serialize="true" data-field="acronimo" type="text" name="acronimo" id="acronimo" placeholder="Acrónimo" required/>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Contactos</legend>
-            <div class="form-element">
-                <label for="observaciones">Observaciones</label>
-                <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
-            </div>
-            <div class="form-element off">
-                <label  for="created_at">Creado</label>
-                <input  data-field="created_at" type="text" name="created_at" id="created_at" placeholder=""/>
-            </div>
-            <div class="form-element off">
-                <label  for="upated_at">Actualizado</label>
-                <input  data-field="updated_at" type="text" name="updated_at" id="updated_at" placeholder=""/>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Gestiones</legend>
             <div class="form-element">
                 <label for="observaciones">Observaciones</label>
                 <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
             </div>
-            <div class="form-element off">
-                <label  for="created_at">Creado</label>
-                <input  data-field="created_at" type="text" name="created_at" id="created_at" placeholder=""/>
-            </div>
-            <div class="form-element off">
-                <label  for="upated_at">Actualizado</label>
-                <input  data-field="updated_at" type="text" name="updated_at" id="updated_at" placeholder=""/>
-            </div>
         </fieldset>
-
 
         <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
     </form>

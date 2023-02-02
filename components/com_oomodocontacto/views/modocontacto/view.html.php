@@ -17,7 +17,7 @@ class OOModoContactoViewModoContacto extends JViewLegacy
 		$document->addCustomTag('<script type="text/javascript" src="'.JURI::root(true).'/templates/onoff-admin/js/master/tableRelationManager.js" defer></script>');
 		$document->addCustomTag('<script type="text/javascript" src="'.JURI::root(true).'/templates/onoff-admin/js/master/detailRelationManager.js" defer></script>');
 		$document->addCustomTag('<script type="text/javascript" src="'.JURI::root(true).'/templates/onoff-admin/js/tabulator/js/tabulator.js" defer></script>');
-		$document->addCustomTag('<script type="text/javascript" src="'.JURI::root(true).'/components/com_oomodoscontacto/views/modocontacto/tmpl/js/entity.js" defer></script>');
+		$document->addCustomTag('<script type="text/javascript" src="'.JURI::root(true).'/components/com_oomodocontacto/views/modocontacto/tmpl/js/entity.js" defer></script>');
 
 
 

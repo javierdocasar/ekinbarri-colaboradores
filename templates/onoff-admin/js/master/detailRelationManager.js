@@ -26,6 +26,7 @@ function DetailRelationManager(options)
             settings.form.resetear();
             jQuery(".relation").addClass("hidden");
             jQuery("#relation-"+settings.entity).removeClass("hidden");
+            settings.form.find("#id_relation").val(settings.id_relation.val());
 
             mostrarRelation();
 
@@ -74,8 +75,9 @@ function DetailRelationManager(options)
         api.post(`${settings.entity}`, item)
             .then((response) => {
                 _detail = response.data.data;
-                renderDetail();
-                mostrarList();
+                //renderDetail();
+                //mostrarList();
+                mostrarDetail();
                 settings.table.addData([response.data.data], true)
                 jQuery(this).removeWaiting();
             })
@@ -91,6 +93,7 @@ function DetailRelationManager(options)
         api.put(`${settings.entity}/${id}`, item)
             .then((response) => {
                 jQuery(this).removeWaiting();
+                mostrarDetail();
                 settings.table.updateData([response.data.data])
                 showMessage("Master", `Se ha actualizado correctamente el registro`)
 
@@ -124,10 +127,11 @@ function DetailRelationManager(options)
 
         settings.form.on('click', '.nav-actions .save', function (e){
             e.preventDefault();
+            e.stopPropagation();
 
             if (settings.form.valid()) {
                 jQuery(this).waiting();
-                if (jQuery('#id').val() === "0") {
+                if (settings.form.find('#id').val() === "0") {
                     createDetail();
                 } else {
                     saveDetail()

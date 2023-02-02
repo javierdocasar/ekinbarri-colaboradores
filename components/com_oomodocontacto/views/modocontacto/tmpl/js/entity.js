@@ -1,13 +1,6 @@
 relationsTable = [];
 columns=[
-    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
-    {title:"Acrónimo", field:"acronimo", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Localidad", field:"localidad", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"CP", field:"codigo-postal", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Provincia", field:"provincia", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Teléfono", field:"telefono", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Mail", field:"mail", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Modo", field:"modo_contacto", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
     {title:"Activo", field:"activo",  vertAlign:"middle", sorter:"boolean", hozAlign:"center", formatter:fmtSiNo,maxWidth:60,},
 
 ];
@@ -35,7 +28,7 @@ tab_filter_items = {
 jQuery(window).on('load', function() {
 
     let settings = {
-        entity: "empresas",
+        entity: "modoscontactos",
         table: "#tableData",
         totals:  jQuery(".list #mon-totals"),
         totals_show: true,

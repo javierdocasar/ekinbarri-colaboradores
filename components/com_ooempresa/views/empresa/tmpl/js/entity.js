@@ -1,5 +1,6 @@
 relationsTable = [];
 columns=[
+    {title:"NIF", field:"nif", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
     {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
     {title:"Acrónimo", field:"acronimo", vertAlign:"middle", sorter:"string", resizable:true},
     {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true},
@@ -28,8 +29,21 @@ tab_filter_items = {
     }
 };
 
+columnsContactos = [
+    {title:"Contacto", field:"contacto", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Cargo", field:"cargo", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Teléfono", field:"telefono", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"EMail", field:"mail", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Fecha", field:"created_At",  vertAlign:"middle", sorter:"date"},
+
+];
 
 
+relations = {
+    "empresascontactos":{entity: "empresascontactos", field_relation: "id_empresa", id_relation:jQuery(".detail #id"), columns:columnsContactos, table:"#tableDataContactos", totals:  null,  totals_show: false, detail:true},
+
+
+};
 
 
 jQuery(window).on('load', function() {
@@ -53,10 +67,7 @@ jQuery(window).on('load', function() {
 
     };
 
-
     tManager = TableManager.init(settings);
-
-
 
     for (const [key, value] of Object.entries(relations))
     {

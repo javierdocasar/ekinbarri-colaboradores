@@ -61,6 +61,7 @@ function TableRelationManager(options)
                 table:_table,
                 table_id:settings.table,
                 new:jQuery('#'+settings.entity+' #new'),
+                id_relation:settings.id_relation,
                 relations: null,
             }
             _detail = new DetailRelationManager(settingsDetail);

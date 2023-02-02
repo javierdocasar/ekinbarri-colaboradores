@@ -1,14 +1,11 @@
 relationsTable = [];
 columns=[
-    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
-    {title:"Acrónimo", field:"acronimo", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Localidad", field:"localidad", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"CP", field:"codigo-postal", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Provincia", field:"provincia", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Teléfono", field:"telefono", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Mail", field:"mail", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Activo", field:"activo",  vertAlign:"middle", sorter:"boolean", hozAlign:"center", formatter:fmtSiNo,maxWidth:60,},
+    {title:"Fecha", field:"fecha", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
+    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Contacto", field:"contacto", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Modo", field:"modo_contacto", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Consultor", field:"consultor", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"Observaciones", field:"observaciones", vertAlign:"middle", sorter:"string", resizable:true},
 
 ];
 
@@ -35,7 +32,7 @@ tab_filter_items = {
 jQuery(window).on('load', function() {
 
     let settings = {
-        entity: "empresas",
+        entity: "actuaciones",
         table: "#tableData",
         totals:  jQuery(".list #mon-totals"),
         totals_show: true,
@@ -48,6 +45,7 @@ jQuery(window).on('load', function() {
         columns: columns,
         tab_filter_items:tab_filter_items,
         detail:true,
+        select:true,
         relations:relations
 
 
@@ -73,4 +71,27 @@ jQuery(window).on('load', function() {
         relationsTable[key] = new TableRelationManager(settings);
         relationsTable[key].init();
     }
+
+    jQuery('#id_empresa').on("change", function (e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        let id = jQuery("#id_empresa").val();
+        api.get(`actuaciones/contactos/${id}`)
+            .then((response) => {
+
+                response.data['id_contacto'].forEach(function (element, index) {
+
+                    jQuery('#id_contacto').append(jQuery('<option>', {
+                        value: element.id,
+                        text : element.value
+                    }));
+                })
+
+
+            })
+            .catch((error) => {
+            });
+    })
 });
+
