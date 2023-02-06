@@ -5,7 +5,7 @@ $entity = "pais"
 ?>
 <section class="list">
     <div class="header">
-        <h3>Empresas<span class="info" id="textSearch"></span></h3>
+        <h3>Modos de contacto<span class="info" id="textSearch"></span></h3>
         <nav id="nav-actions" class="data nav-actions">
             <ul>
                 <!--<li class="search-list" ><button id="openFilter">Filtrar</button></li>-->
