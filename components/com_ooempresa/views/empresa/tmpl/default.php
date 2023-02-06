@@ -195,8 +195,8 @@ $entity = "pais"
                 <input data-serialize="true" data-field="mail" type="text" name="mail" id="mail" placeholder="Teléfono" />
             </div>
 
-            <input type="text" data-field="id" name="id" id="id" value = "0"/>
-            <input type="text" data-serialize="true" data-field="id_empresa" name="id_relation" id="id_relation" value = "0"/>
+            <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
+            <input type="hidden" data-serialize="true" data-field="id_empresa" name="id_relation" id="id_relation" value = "0"/>
 
         </fieldset>
     </form>
