@@ -144,6 +144,9 @@ $entity = "pais"
             <div id="tableDataContactos" class="rtable"></div>
         </fieldset>
         <fieldset>
+            <legend>Actuaciones</legend>
+        </fieldset>
+        <fieldset>
             <legend>Observaciones</legend>
             <div class="form-element">
                 <label for="observaciones">Observaciones</label>
