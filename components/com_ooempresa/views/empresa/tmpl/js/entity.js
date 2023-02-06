@@ -1,14 +1,14 @@
 relationsTable = [];
 columns=[
-    {title:"NIF", field:"nif", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
-    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" },
-    {title:"Acrónimo", field:"acronimo", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Localidad", field:"localidad", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"CP", field:"codigo-postal", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Provincia", field:"provincia", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Teléfono", field:"telefono", vertAlign:"middle", sorter:"string", resizable:true},
-    {title:"Mail", field:"mail", vertAlign:"middle", sorter:"string", resizable:true},
+    {title:"NIF", field:"nif", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" , headerFilter:true},
+    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" , headerFilter:true},
+    {title:"Acrónimo", field:"acronimo", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Localidad", field:"localidad", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"CP", field:"codigo-postal", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Provincia", field:"provincia", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Teléfono", field:"telefono", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Mail", field:"mail", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
     {title:"Activo", field:"activo",  vertAlign:"middle", sorter:"boolean", hozAlign:"center", formatter:fmtSiNo,maxWidth:60,},
 
 ];
@@ -55,12 +55,13 @@ jQuery(window).on('load', function() {
         totals_show: true,
         actions: jQuery(".list #nav-actions"),
         tab_filter: jQuery(".list #nav-filter"),
-        tab_filter_show: true,
+        tab_filter_items:tab_filter_items,
+        tab_filter_show: false,
         search: jQuery('.list #search-form'),
         config: jQuery('.list #config-form'),
         pager: jQuery(".list #nav-pager"),
         columns: columns,
-        tab_filter_items:tab_filter_items,
+
         detail:true,
         relations:relations
 

@@ -37,7 +37,7 @@ $entity = "pais"
             </form>
         </div>
         <div class="data info-list-search hidden"></div>
-        <nav id="nav-filter" class="data nav-filter">
+        <nav id="nav-filter" class="data nav-filter ">
             <ul>
                 <li class="active" data-filter='todos'><a href="#">Todos</a></li>
                 <li class="" data-filter='filter1'><a href="#">Activos</a></li>
@@ -46,17 +46,17 @@ $entity = "pais"
         </nav>
         <section id="mon-totals" class="monitor" >
             <dl class="important">
-                <dt>Todos</dt>
+                <dt>Nº Empresas</dt>
                 <dd id="total_todos">—</dd>
             </dl>
-            <dl class="ok">
+            <!--<dl class="ok">
                 <dt>Activos</dt>
                 <dd id="total_filter1">—</dd>
             </dl>
             <dl class="warning">
                 <dt>Inactivos</dt>
                 <dd id="total_filter2">—</dd>
-            </dl>
+            </dl>-->
 
         </section>
         <nav id="nav-pager" class="data nav-pager hidden">

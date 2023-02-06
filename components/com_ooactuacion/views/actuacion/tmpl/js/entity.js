@@ -9,12 +9,8 @@ columns=[
 
 ];
 
-
 relations = {
-
-
 };
-
 
 tab_filter_items = {
     type: "static",
@@ -25,10 +21,6 @@ tab_filter_items = {
     }
 };
 
-
-
-
-
 jQuery(window).on('load', function() {
 
     let settings = {
@@ -38,7 +30,7 @@ jQuery(window).on('load', function() {
         totals_show: true,
         actions: jQuery(".list #nav-actions"),
         tab_filter: jQuery(".list #nav-filter"),
-        tab_filter_show: true,
+        tab_filter_show: false,
         search: jQuery('.list #search-form'),
         config: jQuery('.list #config-form'),
         pager: jQuery(".list #nav-pager"),

@@ -8,7 +8,6 @@ $entity = "pais"
         <h3>Actuaciones<span class="info" id="textSearch"></span></h3>
         <nav id="nav-actions" class="data nav-actions">
             <ul>
-                <!--<li class="search-list" ><button id="openFilter">Filtrar</button></li>-->
                 <li class="search-list"><button id="openSearch">Buscar</button></li>
                 <li class="config-list"><button id="openConfig">Configurar</button></li>
                 <li class="export"><button id="export">Exportar</button></li>
@@ -29,7 +28,6 @@ $entity = "pais"
                         <option value="0">No</option>
                     </select>
                 </div>
-
                 <div class="footer">
                     <button id="clean" class="delete">Borrar</button>
                     <button id="search" class="filter">Filtrar</button>
@@ -46,18 +44,9 @@ $entity = "pais"
         </nav>
         <section id="mon-totals" class="monitor" >
             <dl class="important">
-                <dt>Todos</dt>
+                <dt>Nº Actuaciones</dt>
                 <dd id="total_todos">—</dd>
             </dl>
-            <dl class="ok">
-                <dt>Activos</dt>
-                <dd id="total_filter1">—</dd>
-            </dl>
-            <dl class="warning">
-                <dt>Inactivos</dt>
-                <dd id="total_filter2">—</dd>
-            </dl>
-
         </section>
         <nav id="nav-pager" class="data nav-pager hidden">
             <div class="footable-pagination-wrapper">
@@ -72,7 +61,6 @@ $entity = "pais"
             <form id="config-form" method="post">
             </form>
         </div>
-        <!--<table id="tableData" class="data" data-paging="false" data-sorting="true" data-paging-size="50" data-paging-container=".nav-pager" data-paging-limit="0" data-paging-count-format="{CP} de {TP}"></table>-->
         <div id="tableData" class="rtable"></div>
     </div>
 </section>
@@ -127,7 +115,6 @@ $entity = "pais"
                 <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
             </div>
         </fieldset>
-
         <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
     </form>
 </section>
