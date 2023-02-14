@@ -70,22 +70,14 @@ class PlgAuthenticationApi extends JPlugin
 
 
 
-                $result = $api->permissions( $token['access_token']);
-                if ($result)
-                {
-                    $app->input->cookie->set("access_permissions", json_encode($result["permissions"]));
+
+
                     $response->status = JAuthentication::STATUS_SUCCESS;
                     $response->username = $credentials["username"];
                     $response->password = $credentials["password"];
-                    $response->email = $result["user"]["email"];
+                    $response->email = $credentials["username"];
                     $response->error_message = '';
-                }
-                else
-                {
-                    $response->status = JAuthentication::STATUS_FAILURE;
-                    $response->error_message = JText::_('No tiene permisos asignados, consulte con el administrador del sistema');
 
-                }
             }
 			else
             {
