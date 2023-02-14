@@ -90,9 +90,16 @@ $entity = "pais"
         </div>
         <fieldset>
             <legend>Datos Generales</legend>
-            <div class="form-element checkbox">
+            <!--<div class="form-element checkbox">
                 <input data-serialize="true" data-field="activo" type="checkbox" data-value="prop" data-params="checked" name="activo" id="activo">
                 <label for="activo">Activo</label>
+            </div>-->
+            <div class="form-element">
+                <label class="mandatory" for="asociacion">Asociación</label>
+                <select data-serialize="true" data-field="asociacion" data-preload="asociacion" name="asociacion" id="asociacion" required>
+                    <option value="" selected>Seleccionar...</option>
+                    <option value="FVEM" selected>FVEM</option>
+                </select>
             </div>
             <div class="form-element">
                     <label class="mandatory" for="nif">NIF</label>
@@ -103,33 +110,33 @@ $entity = "pais"
                 <label class="mandatory" for="empresa">Empresa</label>
                 <input data-serialize="true" data-field="empresa" type="text" name="empresa" id="empresa" placeholder="Empresa" required/>
             </div>
-            <div class="form-element">
+            <!--<div class="form-element">
                 <label class="mandatory" for="acronimo">Acrónimo</label>
                 <input data-serialize="true" data-field="acronimo" type="text" name="acronimo" id="acronimo" placeholder="Acrónimo" />
-            </div>
+            </div>-->
             <div class="form-element">
-                <label class="mandatory" for="direccion">Dirección</label>
+                <label for="direccion">Dirección</label>
                 <input data-serialize="true" data-field="direccion" type="text" name="direccion" id="direccion" placeholder="Direccion" />
             </div>
             <div class="form-element">
-                <label class="mandatory" for="codigopostal">Código Postal</label>
+                <label for="codigopostal">Código Postal</label>
                 <input data-serialize="true" data-field="codigopostal" type="text" name="codigopostal" id="codigopostal" placeholder="CP" />
             </div>
 
             <div class="form-element">
-                <label class="mandatory" for="localidad">Localidad</label>
+                <label for="localidad">Localidad</label>
                 <input data-serialize="true" data-field="localidad" type="text" name="localidad" id="localidad" placeholder="Localidad" />
             </div>
             <div class="form-element">
-                <label class="mandatory" for="provincia">Provincia</label>
+                <label for="provincia">Provincia</label>
                 <input data-serialize="true" data-field="provincia" type="text" name="provincia" id="provincia" placeholder="Provincia" />
             </div>
             <div class="form-element">
-                <label class="mandatory" for="telefono">Teléfono</label>
+                <label for="telefono">Teléfono</label>
                 <input data-serialize="true" data-field="telefono" type="text" name="telefono" id="telefono" placeholder="Teléfono" />
             </div>
             <div class="form-element">
-                <label class="mandatory" for="mail">Email</label>
+                <label for="mail">Email</label>
                 <input data-serialize="true" data-field="mail" type="text" name="mail" id="mail" placeholder="Mail" />
             </div>
 
@@ -143,8 +150,14 @@ $entity = "pais"
             </nav>
             <div id="tableDataContactos" class="rtable"></div>
         </fieldset>
-        <fieldset>
+        <fieldset id="empresasactuaciones">
             <legend>Actuaciones</legend>
+            <nav id="nav-actions" class="data nav-actions">
+                <ul>
+                    <li class="new"><button id="new">Nuevo</button></li>
+                </ul>
+            </nav>
+            <div id="tableDataActuaciones" class="rtable"></div>
         </fieldset>
         <fieldset>
             <legend>Observaciones</legend>
@@ -198,6 +211,56 @@ $entity = "pais"
                 <input data-serialize="true" data-field="mail" type="text" name="mail" id="mail" placeholder="Teléfono" />
             </div>
 
+            <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
+            <input type="hidden" data-serialize="true" data-field="id_empresa" name="id_relation" id="id_relation" value = "0"/>
+
+        </fieldset>
+    </form>
+</section>
+<section id="relation-empresasactuaciones" class="relation off">
+    <form id="form-empresasactuaciones" method="post">
+        <div class="header">
+            <h3>Detalle actuación</h3>
+        </div>
+        <nav class="nav-actions">
+            <ul>
+                <li class="remove"><button class="delete">Eliminar</button></li>
+                <li class="save"><button class="save">Guardar</button></li>
+                <li class="close"><button class="close">Cerrar</button></li>
+            </ul>
+        </nav>
+        <fieldset>
+            <legend>Datos</legend>
+            <div class="form-element">
+                <label class="mandatory" for="id_contacto">Contacto</label>
+                <select data-serialize="true" data-field="id_contacto" data-preload="id_contacto" name="id_contacto" id="id_contacto" required>
+                    <option value="" selected>Seleccionar...</option>
+                </select>
+            </div>
+            <div class="form-element compo serialize-datetime">
+                <label for="fecha_date" class="group-label mandatory">Fecha</label>
+                <div class="form-element span-2">
+                    <label for="fecha_date">Fecha</label>
+                    <a href='#' class='action seldate' tabindex='-1'>Abrir</a>
+                    <input type="text" value="" data-field="fecha_date"  data-datetime="fecha"  name="fecha_date" id="fecha_date" placeholder="dd/mm/yyyy" class="dateES mDate"/>
+                </div>
+                <div class="form-element span-2">
+                    <label for="fecha_time">Hora</label>
+                    <a href='#' class='action seltime' tabindex='-1'>Abrir</a>
+                    <input value="" type="text"  data-field="fecha_time"  data-datetime="fecha"  name="fecha_time" id="fecha_time" placeholder="hh:mm" class="time mTime"/>
+                </div>
+                <input type="hidden" value="" data-serialize="true" data-field="fecha" name="fecha" id="fecha"/>
+            </div>
+            <div class="form-element">
+                <label class="mandatory" for="id_modo_contacto">Modo Contacto</label>
+                <select data-serialize="true" data-field="id_modo_contacto" data-preload="id_modo_contacto" name="id_modo_contacto" id="id_modo_contacto" required>
+                    <option value="" selected>Seleccionar...</option>
+                </select>
+            </div>
+            <div class="form-element">
+                <label for="observaciones">Observaciones</label>
+                <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
+            </div>
             <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
             <input type="hidden" data-serialize="true" data-field="id_empresa" name="id_relation" id="id_relation" value = "0"/>
 
