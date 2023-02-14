@@ -11,7 +11,7 @@ $entity = "pais"
                 <li class="search-list"><button id="openSearch">Buscar</button></li>
                 <li class="config-list"><button id="openConfig">Configurar</button></li>
                 <li class="export"><button id="export">Exportar</button></li>
-                <li class="new"><button id="new">Nuevo</button></li>
+                <!--<li class="new"><button id="new">Nuevo</button></li>-->
             </ul>
         </nav>
     </div>
@@ -68,29 +68,29 @@ $entity = "pais"
     <form id="formData" method="post">
         <nav class="nav-actions">
             <ul>
-                <li class="remove"><button type="button" id="delete">Eliminar</button></li>
-                <li class="save"><button type="button" id="save">Guardar</button></li>
+               <!-- <li class="remove"><button type="button" id="delete">Eliminar</button></li>
+                <li class="save"><button type="button" id="save">Guardar</button></li>-->
                 <li class="close"><button type="button" id="close">Cerrar</button></li>
             </ul>
         </nav>
         <div class="header">
-            <h1>Nuevo Detalle</h1>
+            <h1>Actuación</h1>
         </div>
         <fieldset>
             <legend>Datos Generales</legend>
-            <div class="form-element">
+            <div class="form-element off">
                 <label class="mandatory" for="id_empresa">Empresa</label>
                 <select data-serialize="true" data-field="id_empresa" data-preload="id_empresa" name="id_empresa" id="id_empresa" required>
                     <option value="" selected>Seleccionar...</option>
                 </select>
             </div>
-            <div class="form-element">
+            <div class="form-element off">
                 <label class="mandatory" for="id_contacto">Contacto</label>
                 <select data-serialize="true" data-field="id_contacto" name="id_contacto" id="id_contacto" required>
                     <option value="" selected>Seleccionar...</option>
                 </select>
             </div>
-            <div class="form-element compo serialize-datetime">
+            <div class="form-element compo serialize-datetime off">
                 <label for="fecha_date" class="group-label mandatory">Fecha</label>
                 <div class="form-element span-2">
                     <label for="fecha_date">Fecha</label>
@@ -104,13 +104,13 @@ $entity = "pais"
                 </div>
                 <input type="hidden" value="" data-serialize="true" data-field="fecha" name="fecha" id="fecha"/>
             </div>
-            <div class="form-element">
+            <div class="form-element off">
                 <label class="mandatory" for="id_modo_contacto">Modo Contacto</label>
                 <select data-serialize="true" data-field="id_modo_contacto" data-preload="id_modo_contacto" name="id_modo_contacto" id="id_modo_contacto" required>
                     <option value="" selected>Seleccionar...</option>
                 </select>
             </div>
-            <div class="form-element">
+            <div class="form-element off">
                 <label for="observaciones">Observaciones</label>
                 <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
             </div>
