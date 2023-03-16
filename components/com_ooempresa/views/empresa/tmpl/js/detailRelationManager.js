@@ -69,6 +69,24 @@ function DetailRelationManager(options)
     {
 
         settings.form.fill(_detail);
+
+        if (_detail.readonly)
+        {
+            settings.form.find('.form-element').addClass("off");
+            jQuery('#relation-empresasactuaciones .save').addClass("hidden");
+            jQuery('#relation-empresasactuaciones .remove').addClass("hidden");
+        }
+        else
+        {
+            settings.form.find('.form-element').removeClass("off");
+            jQuery('#relation-empresasactuaciones .save').removeClass("hidden");
+            jQuery('#relation-empresasactuaciones .remove').removeClass("hidden");
+
+        }
+
+
+
+
         jQuery(".relation").addClass("hidden");
         jQuery("#relation-"+settings.entity).removeClass("hidden");
 

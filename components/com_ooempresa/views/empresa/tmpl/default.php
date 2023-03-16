@@ -9,9 +9,9 @@ $entity = "pais"
         <nav id="nav-actions" class="data nav-actions">
             <ul>
                 <!--<li class="search-list" ><button id="openFilter">Filtrar</button></li>-->
-                <li class="search-list"><button id="openSearch">Buscar</button></li>
+                <!--<li class="search-list"><button id="openSearch">Buscar</button></li>-->
                 <li class="config-list"><button id="openConfig">Configurar</button></li>
-                <li class="export"><button id="export">Exportar</button></li>
+                <!--<li class="export"><button id="export">Exportar</button></li>-->
                 <li class="new"><button id="new">Nuevo</button></li>
             </ul>
         </nav>
@@ -110,10 +110,6 @@ $entity = "pais"
                 <label class="mandatory" for="empresa">Empresa</label>
                 <input data-serialize="true" data-field="empresa" type="text" name="empresa" id="empresa" placeholder="Empresa" required/>
             </div>
-            <!--<div class="form-element">
-                <label class="mandatory" for="acronimo">Acrónimo</label>
-                <input data-serialize="true" data-field="acronimo" type="text" name="acronimo" id="acronimo" placeholder="Acrónimo" />
-            </div>-->
             <div class="form-element">
                 <label for="direccion">Dirección</label>
                 <input data-serialize="true" data-field="direccion" type="text" name="direccion" id="direccion" placeholder="Direccion" />
@@ -159,7 +155,7 @@ $entity = "pais"
             </nav>
             <div id="tableDataActuaciones" class="rtable"></div>
         </fieldset>
-        <fieldset>
+        <!--<fieldset>
             <legend>Observaciones</legend>
             <div class="form-element">
                 <label for="observaciones">Observaciones</label>
@@ -173,11 +169,8 @@ $entity = "pais"
                 <label  for="upated_at">Actualizado</label>
                 <input  data-field="updated_at" type="text" name="updated_at" id="updated_at" placeholder=""/>
             </div>
-        </fieldset>
-
-
+        </fieldset>-->
         <input type="hidden" data-field="id" name="id" id="id" value = "0"/>
-
     </form>
 </section>
 <section id="relation-empresascontactos" class="relation off">
