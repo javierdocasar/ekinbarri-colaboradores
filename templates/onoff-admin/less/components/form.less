@@ -130,14 +130,14 @@ select {
 		}
 	}
 	.disabled &,
+	&.disabled,
 	&:disabled,
 	&[disabled=disabled] {
-		background-color: @gris_iiiii;
+		background-color: @gris_iiiiii;
 		color: @color_disabled_i;
 
-		padding-left:0; padding-right:0;
-
 		border-color: transparent;
+		pointer-events: none;
 	}
 }
 	input[type=text],
@@ -195,6 +195,12 @@ select {
 		z-index:2;
 		cursor:pointer;
 		appearance:none;
+		.disabled &,
+		&.disabled,
+		&:disabled,
+		&[disabled=disabled] {
+			pointer-events: none;
+		}
 	}
 	option {
 		color:@txt_color;
