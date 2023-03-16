@@ -75,12 +75,12 @@ label {
 			margin-top: @label_pad_v;
 		}
 	.disabled & {
-		color:@color_disabled_i;
+		color: @color_disabled_i;
 
 		&.mandatory,
 		&:required {
 			&:after {
-				color:@color_disabled_i;
+				color: @color_disabled_i;
 			}
 		}
 	}
@@ -132,7 +132,7 @@ select {
 	.disabled &,
 	&:disabled,
 	&[disabled=disabled] {
-		background-color:transparent;
+		background-color: @gris_iiiii;
 		color: @color_disabled_i;
 
 		padding-left:0; padding-right:0;
