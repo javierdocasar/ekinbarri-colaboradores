@@ -64,7 +64,7 @@ class JConfig {
 	public $shared_session = '0';
 
 	// OnOff Variables
-    public $api_host = "https://ekinbarri-colaboradores-api.onoff.studio/index.php";
+    public $api_host = "https://consultores-api/index.php";
     public $api_client_id = "2";
     public $api_client_secret = "LrYmPyFpogcfYHWpB2cyOaOgApIBpX6btTia9GtY";
 
