@@ -1,7 +1,7 @@
 const TOKEN = getCookie("access_token");
 const api = axios.create({
 	//baseURL: 'http://127.0.0.1:8000/api/admin/',
-	baseURL: 'https://colaboradores-api.ekinbarri.eus/index.php/api/admin/',
+	baseURL: 'https://consultores-api.ekinbarri.eus/index.php/api/admin/',
 	headers: {'Authorization': 'Bearer ' + TOKEN, 'Content.Type':'application/json'}
 })
 
