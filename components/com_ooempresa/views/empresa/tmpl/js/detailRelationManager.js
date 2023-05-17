@@ -32,6 +32,9 @@ function DetailRelationManager(options)
                     //settings.form.resetear();
                     jQuery(".relation").addClass("hidden");
                     jQuery("#relation-"+settings.entity).removeClass("hidden");
+                    settings.form.find('.form-element').removeClass("disabled");
+                    jQuery('#relation-empresasactuaciones .save').removeClass("hidden");
+                    jQuery('#relation-empresasactuaciones .remove').removeClass("hidden");
                     settings.form.find("#id_relation").val(settings.id_relation.val());
 
                     mostrarRelation();
@@ -72,13 +75,13 @@ function DetailRelationManager(options)
 
         if (_detail.readonly)
         {
-            settings.form.find('.form-element').addClass("off");
+            settings.form.find('.form-element').addClass("disabled");
             jQuery('#relation-empresasactuaciones .save').addClass("hidden");
             jQuery('#relation-empresasactuaciones .remove').addClass("hidden");
         }
         else
         {
-            settings.form.find('.form-element').removeClass("off");
+            settings.form.find('.form-element').removeClass("disabled");
             jQuery('#relation-empresasactuaciones .save').removeClass("hidden");
             jQuery('#relation-empresasactuaciones .remove').removeClass("hidden");
 

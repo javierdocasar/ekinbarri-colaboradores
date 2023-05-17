@@ -30,11 +30,11 @@ tab_filter_items = {
 };
 
 columnsActuaciones = [
-    {title:"Fecha", field:"fecha", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green", headerFilter:true},
-    {title:"Contacto", field:"contacto", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
-    {title:"Modo", field:"modo_contacto", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
-    {title:"Consultor", field:"consultor", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
-    {title:"Observaciones", field:"observaciones", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
+    {title:"Fecha", field:"fecha", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green", },
+    {title:"Contacto", field:"contacto", vertAlign:"middle", sorter:"string", resizable:true, },
+    {title:"Modo", field:"modo_contacto", vertAlign:"middle", sorter:"string", resizable:true, },
+    {title:"Consultor", field:"consultor", vertAlign:"middle", sorter:"string", resizable:true, },
+    {title:"Observaciones", field:"observaciones", vertAlign:"middle", sorter:"string", resizable:true, },
 
 ];
 columnsContactos = [

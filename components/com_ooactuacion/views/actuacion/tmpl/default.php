@@ -10,7 +10,7 @@ $entity = "pais"
             <ul>
                 <li class="search-list"><button id="openSearch">Buscar</button></li>
                 <li class="config-list"><button id="openConfig">Configurar</button></li>
-                <li class="export"><button id="export">Exportar</button></li>
+                <!--<li class="export"><button id="export">Exportar</button></li>-->
                 <!--<li class="new"><button id="new">Nuevo</button></li>-->
             </ul>
         </nav>

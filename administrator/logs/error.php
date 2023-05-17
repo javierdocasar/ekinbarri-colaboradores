@@ -5,3 +5,4 @@
 
 #Fields: datetime	priority clientip	category	message
 2023-02-14T08:20:40+00:00	INFO 127.0.0.1	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.
+2023-05-15T06:17:04+00:00	INFO 127.0.0.1	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.
