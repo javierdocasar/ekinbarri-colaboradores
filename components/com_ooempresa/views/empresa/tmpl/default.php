@@ -98,8 +98,12 @@ $entity = "pais"
                 <label class="mandatory" for="asociacion">Asociación</label>
                 <select data-serialize="true" data-field="asociacion" data-preload="asociacion" name="asociacion" id="asociacion" required>
                     <option value="" selected>Seleccionar...</option>
-                    <option value="FVEM" selected>FVEM</option>
-                </select>
+                    <option value="ASCOBI">ASCOBI</option>
+                    <option value="AVEQ">AVEQ</option>
+                    <option value="CEBEK">CEBEK</option>
+                    <option value="CECOBI">CECOBI</option>
+                    <option value="FVEM">FVEM</option>
+                <option value="</select>
             </div>
             <div class="form-element">
                     <label class="mandatory" for="nif">NIF</label>
