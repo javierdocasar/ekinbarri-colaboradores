@@ -78,19 +78,19 @@ $entity = "pais"
         </div>
         <fieldset>
             <legend>Datos Generales</legend>
-            <div class="form-element off">
-                <label class="mandatory" for="id_empresa">Empresa</label>
-                <select data-serialize="true" data-field="id_empresa" data-preload="id_empresa" name="id_empresa" id="id_empresa" required>
-                    <option value="" selected>Seleccionar...</option>
-                </select>
+            <div class="form-element disabled">
+                <label class="mandatory" for="consultor">Consultor</label>
+                <input data-serialize="true" data-field="consultor" type="text" name="consultor" id="consultor" placeholder="Consultor" />
             </div>
-            <div class="form-element off">
-                <label class="mandatory" for="id_contacto">Contacto</label>
-                <select data-serialize="true" data-field="id_contacto" name="id_contacto" id="id_contacto" required>
-                    <option value="" selected>Seleccionar...</option>
-                </select>
+            <div class="form-element disabled">
+                <label class="mandatory" for="empresa">Empresa</label>
+                <input data-serialize="true" data-field="empresa" type="text" name="empresa" id="empresa" placeholder="Empresa" />
             </div>
-            <div class="form-element compo serialize-datetime off">
+            <div class="form-element disabled">
+                <label class="mandatory" for="contacto">Contacto</label>
+                <input data-serialize="true" data-field="contacto" type="text" name="contacto" id="contacto" placeholder="Contacto" />
+            </div>
+            <div class="form-element compo serialize-datetime disabled">
                 <label for="fecha_date" class="group-label mandatory">Fecha</label>
                 <div class="form-element span-2">
                     <label for="fecha_date">Fecha</label>
@@ -104,13 +104,11 @@ $entity = "pais"
                 </div>
                 <input type="hidden" value="" data-serialize="true" data-field="fecha" name="fecha" id="fecha"/>
             </div>
-            <div class="form-element off">
-                <label class="mandatory" for="id_modo_contacto">Modo Contacto</label>
-                <select data-serialize="true" data-field="id_modo_contacto" data-preload="id_modo_contacto" name="id_modo_contacto" id="id_modo_contacto" required>
-                    <option value="" selected>Seleccionar...</option>
-                </select>
+            <div class="form-element disabled">
+                <label class="mandatory" for="modo_contacto">Contacto</label>
+                <input data-serialize="true" data-field="modo_contacto" type="text" name="modo_contacto" id="modo_contacto" placeholder="Contacto" />
             </div>
-            <div class="form-element off">
+            <div class="form-element disabled">
                 <label for="observaciones">Observaciones</label>
                 <textarea rows="8" cols="50" data-field="observaciones" data-serialize="true"  name="observaciones" id="observaciones"></textarea>
             </div>
