@@ -1,7 +1,7 @@
 relationsTable = [];
 columns=[
-    {title:"NIF", field:"nif", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" , headerFilter:true},
-    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green" , headerFilter:true},
+    {title:"NIF", field:"nif", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green", maxWidth:120, headerFilter:true},
+    {title:"Empresa", field:"empresa", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, cssClass:"green", minWidth:300, headerFilter:true},
     {title:"Asociacion", field:"asociacion", vertAlign:"middle", sorter:"string", resizable:true, frozen:true, headerFilter:true},
     {title:"Dirección", field:"direccion", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},
     {title:"Localidad", field:"localidad", vertAlign:"middle", sorter:"string", resizable:true, headerFilter:true},

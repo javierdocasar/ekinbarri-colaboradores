@@ -12,7 +12,7 @@ const TableManager = (function () {
     let _search_params = null;
     let _tab_params = null;
     let _page = 1;
-    let _tableOptions = {layout:"fitColumns", renderVertical:"basic",
+    let _tableOptions = {layout:"fitDataFill", renderVertical:"basic",
         persistence: {sort: false, filter: false, group: false, page: false, columns: ["title","width", "visible", "frozen"], },
         dataSendParams:"sorter", paginationSize:50, maxHeight:"100%",
         groupHeader: function(value, count, data, group){

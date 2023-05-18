@@ -90,10 +90,6 @@ $entity = "pais"
         </div>
         <fieldset>
             <legend>Datos Generales</legend>
-            <!--<div class="form-element checkbox">
-                <input data-serialize="true" data-field="activo" type="checkbox" data-value="prop" data-params="checked" name="activo" id="activo">
-                <label for="activo">Activo</label>
-            </div>-->
             <div class="form-element">
                 <label class="mandatory" for="asociacion">Asociación</label>
                 <select data-serialize="true" data-field="asociacion" data-preload="asociacion" name="asociacion" id="asociacion" required>
@@ -107,7 +103,7 @@ $entity = "pais"
             </div>
             <div class="form-element">
                     <label class="mandatory" for="nif">NIF</label>
-                <input data-serialize="true" data-field="nif" type="text" name="nif" id="nif" placeholder="NIF" required/>
+                <input data-serialize="true" data-field="nif" type="text" name="nif" id="nif" placeholder="NIF"/>
             </div>
 
             <div class="form-element">
