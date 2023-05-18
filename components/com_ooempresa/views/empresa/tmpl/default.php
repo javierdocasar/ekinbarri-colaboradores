@@ -99,11 +99,11 @@ $entity = "pais"
                     <option value="CEBEK">CEBEK</option>
                     <option value="CECOBI">CECOBI</option>
                     <option value="FVEM">FVEM</option>
-                <option value="</select>
+
             </div>
             <div class="form-element">
                     <label class="mandatory" for="nif">NIF</label>
-                <input data-serialize="true" data-field="nif" type="text" name="nif" id="nif" placeholder="NIF"/>
+                <input data-serialize="true" data-field="nif" type="text" name="nif" id="nif" placeholder="NIF" />
             </div>
 
             <div class="form-element">
